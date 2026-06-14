@@ -3027,3 +3027,48 @@ body:not(.home-page-body) .navbar:not(.scrolled) .hamburger .bar {
         border-radius: 0;
     }
 }
+
+/* ==========================================================================
+   CHECKLIST, TIMELINE, GALLERY & FAQ STYLES
+   ========================================================================== */
+.checklist-card {
+    transition: transform 0.3s ease;
+}
+.checklist-item {
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+}
+.checklist-item:hover {
+    background-color: var(--primary-light);
+}
+.wellness-checkbox {
+    cursor: pointer;
+}
+.process-step {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.transformation-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.transformation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.faq-toggle:hover .faq-icon {
+    color: var(--accent);
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: var(--accent);
+}
+.lead-magnet-box {
+    transition: transform 0.3s ease;
+}
+.lead-magnet-box:hover {
+    transform: scale(1.01);
+}

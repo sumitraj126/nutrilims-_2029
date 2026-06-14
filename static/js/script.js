@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ==========================================================================
+    // CONFIGURATION: GOOGLE SHEET WEB APP URL
+    // Copy and paste your deployed Google Apps Script web app URL here.
+    // E.g. const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycb.../exec";
+    // ==========================================================================
+    const GOOGLE_SHEET_WEB_APP_URL = "";
+
     /* ==========================================================================
        0. STATIC DATASETS (EMBEDDED DATABASE)
        ========================================================================== */
@@ -540,8 +547,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 bookingNextBtn.textContent = "Processing payment...";
                 
                 setTimeout(() => {
-                    // Save booking in localStorage
-                    const localBookings = JSON.parse(localStorage.getItem('nutrislims_bookings') || '[]');
                     const newBooking = {
                         id: `BK-${Math.floor(100000 + Math.random() * 900000)}`,
                         name: clientName,
@@ -552,14 +557,42 @@ document.addEventListener('DOMContentLoaded', () => {
                         time: selectedTime,
                         goal: clientGoal
                     };
+                    
+                    // Save booking in localStorage
+                    const localBookings = JSON.parse(localStorage.getItem('nutrislims_bookings') || '[]');
                     localBookings.push(newBooking);
                     localStorage.setItem('nutrislims_bookings', JSON.stringify(localBookings));
-                    
-                    // Populate step 5
-                    document.getElementById('conf-service').textContent = selectedService;
-                    document.getElementById('conf-date').textContent = selectedDate;
-                    document.getElementById('conf-time').textContent = selectedTime;
-                    document.getElementById('conf-ref').textContent = newBooking.id;
+
+                    const finalizeBooking = () => {
+                        // Populate step 5
+                        document.getElementById('conf-service').textContent = selectedService;
+                        document.getElementById('conf-date').textContent = selectedDate;
+                        document.getElementById('conf-time').textContent = selectedTime;
+                        document.getElementById('conf-ref').textContent = newBooking.id;
+                        bookingNextBtn.disabled = false;
+                        updateStep(5);
+                    };
+
+                    if (GOOGLE_SHEET_WEB_APP_URL) {
+                        fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                type: "booking",
+                                ...newBooking
+                            })
+                        }).then(() => {
+                            finalizeBooking();
+                        }).catch(err => {
+                            console.error("Sheets booking error:", err);
+                            finalizeBooking();
+                        });
+                    } else {
+                        finalizeBooking();
+                    }
+                }, 1500);
+            }
                     
                     bookingNextBtn.disabled = false;
                     updateStep(5);
@@ -774,27 +807,53 @@ document.addEventListener('DOMContentLoaded', () => {
                     const localLeads = JSON.parse(localStorage.getItem('nutrislims_leads') || '[]');
                     localLeads.push({ email, phone, personality: result.personality, answers: quizAnswers });
                     localStorage.setItem('nutrislims_leads', JSON.stringify(localLeads));
-                    
-                    // Display results
-                    document.getElementById('res-icon').textContent = result.icon;
-                    document.getElementById('res-personality-name').textContent = result.personality;
-                    document.getElementById('res-desc').textContent = result.description;
-                    document.getElementById('res-tip').textContent = result.tip;
-                    
-                    const foodTags = document.getElementById('res-foods');
-                    foodTags.innerHTML = '';
-                    result.foods.forEach(f => {
-                        const span = document.createElement('span');
-                        span.className = 'food-tag-badge';
-                        span.textContent = f;
-                        foodTags.appendChild(span);
-                    });
-                    
-                    document.getElementById('btn-quiz-book-redirect').href = (result.personality === 'Gut Healer') ? 'book.html?service=Clinical Nutrition' : 'book.html?service=Weight Loss Management';
-                    
-                    quizEmailCard.classList.add('hidden');
-                    quizResultsCard.classList.remove('hidden');
-                    leadSubmitBtn.disabled = false;
+
+                    const finalizeQuizLead = () => {
+                        // Display results
+                        document.getElementById('res-icon').textContent = result.icon;
+                        document.getElementById('res-personality-name').textContent = result.personality;
+                        document.getElementById('res-desc').textContent = result.description;
+                        document.getElementById('res-tip').textContent = result.tip;
+                        
+                        const foodTags = document.getElementById('res-foods');
+                        foodTags.innerHTML = '';
+                        result.foods.forEach(f => {
+                            const span = document.createElement('span');
+                            span.className = 'food-tag-badge';
+                            span.textContent = f;
+                            foodTags.appendChild(span);
+                        });
+                        
+                        document.getElementById('btn-quiz-book-redirect').href = (result.personality === 'Gut Healer') ? 'book.html?service=Clinical Nutrition' : 'book.html?service=Weight Loss Management';
+                        
+                        quizEmailCard.classList.add('hidden');
+                        quizResultsCard.classList.remove('hidden');
+                        leadSubmitBtn.disabled = false;
+                    };
+
+                    if (GOOGLE_SHEET_WEB_APP_URL) {
+                        fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                type: "quiz",
+                                name: "Quiz Lead",
+                                email: email,
+                                phone: phone || "N/A",
+                                score: "85",
+                                archetype: result.personality,
+                                actionTip: result.tip
+                            })
+                        }).then(() => {
+                            finalizeQuizLead();
+                        }).catch(err => {
+                            console.error("Sheets quiz lead error:", err);
+                            finalizeQuizLead();
+                        });
+                    } else {
+                        finalizeQuizLead();
+                    }
                 }, 1500);
             });
         }
@@ -818,17 +877,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 const phone = document.getElementById('ct-phone').value;
                 const msg = document.getElementById('ct-msg').value;
                 
+                const contactPayload = {
+                    type: "contact",
+                    name,
+                    email,
+                    phone,
+                    subject: "Website Contact Form Inquiry",
+                    message: msg
+                };
+
                 // Save contact submission
                 const localContacts = JSON.parse(localStorage.getItem('nutrislims_contacts') || '[]');
-                localContacts.push({ name, email, phone, msg, date: new Date().toISOString() });
+                localContacts.push({ ...contactPayload, date: new Date().toISOString() });
                 localStorage.setItem('nutrislims_contacts', JSON.stringify(localContacts));
                 
-                contactForm.reset();
-                document.getElementById('contact-success').classList.remove('hidden');
-                btn.disabled = false;
-                btn.textContent = "Send Message";
-                
-                setTimeout(() => document.getElementById('contact-success').classList.add('hidden'), 5000);
+                const finalizeContact = () => {
+                    contactForm.reset();
+                    document.getElementById('contact-success').classList.remove('hidden');
+                    btn.disabled = false;
+                    btn.textContent = "Send Message";
+                    setTimeout(() => document.getElementById('contact-success').classList.add('hidden'), 5000);
+                };
+
+                if (GOOGLE_SHEET_WEB_APP_URL) {
+                    fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(contactPayload)
+                    }).then(() => {
+                        finalizeContact();
+                    }).catch(err => {
+                        console.error("Sheets contact error:", err);
+                        finalizeContact();
+                    });
+                } else {
+                    finalizeContact();
+                }
             }, 1000);
         });
     }
@@ -1240,4 +1325,68 @@ document.addEventListener('DOMContentLoaded', () => {
             el.textContent = v.includes('.') ? v + '★' : (v === '95' ? v + '%' : v + '+');
         });
     }
+
+    /* ==========================================================================
+       13. INTERACTIVE WELLNESS SCORE CHECKLIST
+       ========================================================================== */
+    const checklistItems = document.querySelectorAll('.wellness-checkbox');
+    const scoreVal = document.getElementById('wellness-score-value');
+    const scoreFeedback = document.getElementById('wellness-score-feedback');
+    
+    if (checklistItems.length > 0 && scoreVal && scoreFeedback) {
+        checklistItems.forEach(item => {
+            item.addEventListener('change', calculateScore);
+        });
+        
+        function calculateScore() {
+            let total = 0;
+            checklistItems.forEach(item => {
+                if (item.checked) {
+                    total += parseInt(item.getAttribute('data-points') || '0');
+                }
+            });
+            
+            scoreVal.textContent = `${total} / 100`;
+            
+            if (total === 0) {
+                scoreFeedback.textContent = "Start checking off items!";
+                scoreFeedback.style.color = "var(--text-dark)";
+            } else if (total < 40) {
+                scoreFeedback.textContent = "Every healthy swap matters. Keep going! 🌱";
+                scoreFeedback.style.color = "var(--accent)";
+            } else if (total < 70) {
+                scoreFeedback.textContent = "Good job! You're building a strong foundation. 👍";
+                scoreFeedback.style.color = "var(--primary-dark)";
+            } else if (total < 90) {
+                scoreFeedback.textContent = "Excellent wellness score today! You're thriving. ⚡";
+                scoreFeedback.style.color = "var(--primary-dark)";
+            } else {
+                scoreFeedback.textContent = "Phenomenal score! Oshin would be proud! 🏆";
+                scoreFeedback.style.color = "#C9A84C";
+            }
+        }
+    }
+
+    /* ==========================================================================
+       14. FAQ ACCORDION COMPONENT
+       ========================================================================== */
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const item = toggle.parentElement;
+            const content = item.querySelector('.faq-content');
+            
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-content').style.maxHeight = '0px';
+            });
+            
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
 });
