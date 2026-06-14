@@ -593,11 +593,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }, 1500);
             }
-                    
-                    bookingNextBtn.disabled = false;
-                    updateStep(5);
-                }, 1500);
-            }
         });
         
         // Step 4 Switch Cards
