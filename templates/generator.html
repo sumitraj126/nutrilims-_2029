@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Clinician Portal - AI Diet Plan Generator{% endblock %}
+
+{% block content %}
+<section class="generator-section section">
+    <div class="container">
+        <div class="generator-card">
+            <!-- Header Info -->
+            <div class="generator-header">
+                <h2>Clinical Diet Plan Generator</h2>
+                <p>Private Clinician Portal — Upload patient intake sheets to compile Word diet charts.</p>
+            </div>
+            
+            <!-- Mode Selector -->
+            <div class="generator-mode">
+                <label class="mode-radio-wrapper">
+                    <input type="radio" name="patient_mode" value="new" class="mode-radio" checked>
+                    <span class="mode-label-btn">New Patient</span>
+                </label>
+                <label class="mode-radio-wrapper">
+                    <input type="radio" name="patient_mode" value="followup" class="mode-radio">
+                    <span class="mode-label-btn">Follow-Up</span>
+                </label>
+            </div>
+            
+            <!-- Upload Drag-Drop Box -->
+            <div class="upload-area" id="clinical-drop-area">
+                <input type="file" id="clinical-file-input" accept="image/*,.pdf" hidden>
+                <div class="upload-content" id="clinical-upload-content">
+                    <div class="upload-icon">📤</div>
+                    <h4>Upload Patient Intake Form</h4>
+                    <p>Drag & drop file here or <span class="browse-link" onclick="document.getElementById('clinical-file-input').click()" style="color: var(--primary-dark); font-weight: 700; text-decoration: underline; cursor: pointer;">Browse</span> (PDF / Image)</p>
+                </div>
+                
+                <!-- Upload File Pill -->
+                <div class="file-pill hidden" id="clinical-file-preview">
+                    <div class="file-pill-left">
+                        <span>📄</span>
+                        <span id="clinical-file-name">filename.pdf</span>
+                    </div>
+                    <button class="file-remove-btn" id="clinical-file-remove-btn" type="button">&times;</button>
+                </div>
+            </div>
+            
+            <!-- Action Button -->
+            <button class="btn btn-gold btn-pill generator-btn" id="btn-generate-clinical-report" disabled>
+                Generate Personalized Diet Plan 📝
+            </button>
+            
+            <!-- Loading Indicator -->
+            <div class="generator-loading hidden" id="clinical-loading-state">
+                <div class="recipe-spinner"></div>
+                <div class="generator-loading-text" id="clinical-loading-text">Extracting Patient Form Data...</div>
+                <div class="generator-progress-bar">
+                    <div class="generator-progress-fill" id="clinical-progress-fill"></div>
+                </div>
+            </div>
+            
+            <!-- Success Panel -->
+            <div class="generator-success hidden" id="clinical-success-state">
+                <div class="generator-success-icon">✓</div>
+                <h3>Diet Plan Ready!</h3>
+                <p>The personalized clinical diet plan document has been generated successfully.</p>
+                <a id="clinical-download-link" class="btn btn-gold btn-pill" href="#" download>
+                    Download Word Document (.docx) 📥
+                </a>
+            </div>
+            
+            <!-- Error Panel -->
+            <div class="generator-error hidden" id="clinical-error-state">
+                <div class="generator-success-icon" style="color: var(--error);">⚠</div>
+                <h3>Generation Failed</h3>
+                <p id="clinical-error-message">Something went wrong during form analysis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

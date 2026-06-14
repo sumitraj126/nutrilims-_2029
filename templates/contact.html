@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Contact Us - Health & Wellness Clinic{% endblock %}
+
+{% block extra_css %}
+<!-- Leaflet CSS for Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+{% endblock %}
+
+{% block content %}
+<section class="contact-page-section section">
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 15px;">Get in Touch</h1>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 50px auto; color: var(--text-muted);">
+            Have questions about our programs? Want to coordinate with your physician? Send us a message or contact us directly via WhatsApp.
+        </p>
+        
+        <div class="contact-layout-grid">
+            <!-- Left: Info & Map -->
+            <div class="contact-info-panel">
+                <!-- Info details -->
+                <div class="contact-details-card">
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-icon">📍</span>
+                        <div class="contact-detail-text">
+                            <h5>Clinic Address</h5>
+                            <p>Vijay Nagar Main Road, Block C-3, Near Apollo Hospital, Indore, Madhya Pradesh, 452010</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-icon">📞</span>
+                        <div class="contact-detail-text">
+                            <h5>Phone & WhatsApp</h5>
+                            <p>+91 98765 43210 (Consulting hours only)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-icon">✉️</span>
+                        <div class="contact-detail-text">
+                            <h5>Email Inquiries</h5>
+                            <p>contact@nutrislims.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-icon">🕒</span>
+                        <div class="contact-detail-text">
+                            <h5>Clinic Hours</h5>
+                            <p>Monday - Saturday: 9:00 AM - 7:00 PM (Closed on Sundays)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp Card -->
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-action-card">
+                    <div class="whatsapp-card-left">
+                        <span class="whatsapp-icon-large">💬</span>
+                        <div>
+                            <h4>Chat on WhatsApp</h4>
+                            <p>Instant answers from Oshin's team</p>
+                        </div>
+                    </div>
+                    <span class="btn btn-whatsapp-cta btn-pill">Chat Now</span>
+                </a>
+                
+                <!-- Leaflet Map -->
+                <div class="map-embed-container" id="contact-map"></div>
+            </div>
+            
+            <!-- Right: Contact Form -->
+            <div class="card-standard" style="padding: 40px; display: flex; flex-direction: column; gap: 24px; align-self: flex-start;">
+                <h3 style="font-size: 24px;">Send Message</h3>
+                <p style="font-size: 14px; margin-top: -10px; color: var(--text-muted);">Fill out this form and Oshin will respond within 24 hours.</p>
+                
+                <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="form-group">
+                        <label for="ct-name">Full Name</label>
+                        <input type="text" id="ct-name" class="form-input" placeholder="e.g. Aditi Sharma" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ct-email">Email Address</label>
+                        <input type="email" id="ct-email" class="form-input" placeholder="e.g. aditi@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ct-phone">Phone Number (Optional)</label>
+                        <input type="tel" id="ct-phone" class="form-input" placeholder="e.g. +91 98765 43210">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ct-msg">Your Message</label>
+                        <textarea id="ct-msg" class="form-input" rows="5" placeholder="Tell us about your health goal or query..." required style="resize: vertical; min-height: 100px; font-family: 'Inter', sans-serif;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gold btn-pill" style="align-self: flex-start; margin-top: 10px;">Send Message</button>
+                </form>
+                
+                <!-- Success message container -->
+                <div class="recipe-benefit-alert hidden" id="contact-success" style="background-color: var(--primary-light); border-left-color: var(--primary); color: var(--primary-dark);">
+                    <strong>✓ Thank you!</strong> Your message has been sent successfully. We will get back to you shortly.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Leaflet JS for Map -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Indore, Vijay Nagar coordinates
+        const lat = 22.7533;
+        const lng = 75.8937;
+        
+        // Initialize Map
+        const map = L.map('contact-map').setView([lat, lng], 15);
+        
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        // Add Customized Marker
+        const marker = L.marker([lat, lng]).addTo(map);
+        marker.bindPopup("<b>Nutrislims Health & Wellness Clinic</b><br>Vijay Nagar, Indore").openPopup();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,424 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Home - Health & Wellness Clinic{% endblock %}
+
+{% block content %}
+<!-- HERO BANNER -->
+<section class="hero-banner">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <h1>Transform Your Health with Expert Nutrition</h1>
+            <p>Personalised diet plans by certified nutritionist Oshin Ambekar — trusted by 500+ clients across India.</p>
+            <div class="hero-ctas">
+                <a href="/book" class="btn btn-gold btn-pill btn-large">Book Free Consultation</a>
+                <a href="/quiz" class="btn btn-outline btn-pill btn-large">Take Our Free Diet Quiz</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST STATS BAR -->
+<section class="trust-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-target="500">0</span>
+                <span class="stat-label">Clients Helped</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="8">0</span>
+                <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="95">0</span>
+                <span class="stat-label">Success Rate (%)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="4.9">0</span>
+                <span class="stat-label">Average Rating ★</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLINICAL HABITS MATRIX (Transformation Estimator) -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Clinical Health Matrix</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">
+            Adjust the sliders below to estimate your health transformation potential based on daily lifestyle indicators. See how key clinical metrics respond dynamically.
+        </p>
+        
+        <div class="matrix-container">
+            <!-- Left: Sliders input -->
+            <div class="matrix-inputs">
+                <div class="slider-group">
+                    <div class="slider-label-row">
+                        <span>Daily Water Intake</span>
+                        <span id="water-val">1.5 Liters</span>
+                    </div>
+                    <input type="range" min="0.5" max="4.5" step="0.5" value="1.5" class="matrix-slider" id="water-slider">
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label-row">
+                        <span>Sleep Duration</span>
+                        <span id="sleep-val">6 Hours</span>
+                    </div>
+                    <input type="range" min="4" max="10" step="0.5" value="6" class="matrix-slider" id="sleep-slider">
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label-row">
+                        <span>Daily Activity</span>
+                        <span id="activity-val">15 Minutes</span>
+                    </div>
+                    <input type="range" min="0" max="90" step="5" value="15" class="matrix-slider" id="activity-slider">
+                </div>
+            </div>
+            
+            <!-- Right: Interactive Arcs -->
+            <div class="matrix-results">
+                <!-- Arc 1: Metabolic Rate -->
+                <div class="matrix-arc-item">
+                    <div class="svg-arc-container">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" class="svg-arc-bg" />
+                            <circle cx="50" cy="50" r="40" class="svg-arc-fill" id="metabolic-fill" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+                        </svg>
+                        <div class="arc-text" id="metabolic-text">0%</div>
+                    </div>
+                    <div class="arc-label">Metabolic Activation</div>
+                </div>
+                
+                <!-- Arc 2: Inflammation Reduction -->
+                <div class="matrix-arc-item">
+                    <div class="svg-arc-container">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" class="svg-arc-bg" />
+                            <circle cx="50" cy="50" r="40" class="svg-arc-fill" id="inflammation-fill" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+                        </svg>
+                        <div class="arc-text" id="inflammation-text">0%</div>
+                    </div>
+                    <div class="arc-label">Inflammation Control</div>
+                </div>
+                
+                <!-- Arc 3: Vitality Index -->
+                <div class="matrix-arc-item">
+                    <div class="svg-arc-container">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" class="svg-arc-bg" />
+                            <circle cx="50" cy="50" r="40" class="svg-arc-fill" id="vitality-fill" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+                        </svg>
+                        <div class="arc-text" id="vitality-text">0</div>
+                    </div>
+                    <div class="arc-label">Vitality & Energy Index</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI FRIDGE RECIPE BUILDER WIDGET -->
+<section class="section" style="background-color: var(--primary-light);">
+    <div class="container">
+        <h2 class="section-title">AI Fridge Recipe Builder</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">
+            Got leftover ingredients? Enter what is in your fridge, select your health target, and let our AI dietitian craft a healthy Indian recipe instantly!
+        </p>
+        
+        <div class="recipe-builder-widget">
+            <div class="recipe-builder-grid">
+                <!-- Left: Form inputs -->
+                <div class="recipe-inputs-panel">
+                    <div class="input-tags-container">
+                        <label for="ingredient-input">Enter Ingredients</label>
+                        <div class="tags-input-box" id="tags-input-box">
+                            <input type="text" id="ingredient-input" placeholder="Type ingredient & press Enter (e.g. Paneer, Spinach)">
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-goal-select">
+                        <label for="recipe-goal">Dietary Target</label>
+                        <select id="recipe-goal">
+                            <option value="General Wellness">General Wellness & Clean Eating</option>
+                            <option value="Weight Loss">Low Calorie (Weight Loss)</option>
+                            <option value="PCOS Friendly">Hormone Balance (PCOS Diet)</option>
+                            <option value="Diabetes Friendly">Low Glycemic (Diabetes Diet)</option>
+                            <option value="High Protein">Muscle Building & High Protein</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-gold" id="btn-build-recipe">Generate Healthy Recipe 🍳</button>
+                </div>
+                
+                <!-- Right: Output Card -->
+                <div class="recipe-output-panel" id="recipe-output-panel">
+                    <!-- Default Placeholder -->
+                    <div class="recipe-placeholder" id="recipe-placeholder">
+                        <div class="recipe-placeholder-icon">🥕</div>
+                        <h3>Your Healthy Recipe Will Appear Here</h3>
+                        <p>Add ingredients on the left (at least one) and hit generate to query Oshin's AI recipe compiler.</p>
+                    </div>
+                    
+                    <!-- Loader -->
+                    <div class="recipe-loader hidden" id="recipe-loader">
+                        <div class="recipe-spinner"></div>
+                        <div class="recipe-loading-text">Crafting customized recipe...</div>
+                    </div>
+                    
+                    <!-- Result -->
+                    <div class="recipe-card-result hidden" id="recipe-card-result">
+                        <div class="recipe-header-row">
+                            <div>
+                                <h3 id="res-recipe-name">Paneer Spinach Bowl</h3>
+                                <span class="recipe-meta-badge" id="res-prep-time">20 mins</span>
+                            </div>
+                            <span class="recipe-meta-badge" id="res-calories" style="background-color: var(--primary-dark);">280 kcal</span>
+                        </div>
+                        
+                        <div class="recipe-stats-row">
+                            <div class="recipe-stat-box">
+                                <span>Protein</span>
+                                <span id="res-protein">15g</span>
+                            </div>
+                            <div class="recipe-stat-box">
+                                <span>Carbs</span>
+                                <span id="res-carbs">20g</span>
+                            </div>
+                            <div class="recipe-stat-box">
+                                <span>Fat</span>
+                                <span id="res-fat">8g</span>
+                            </div>
+                            <div class="recipe-stat-box">
+                                <span>Fiber</span>
+                                <span id="res-fiber">6g</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="recipe-section-title">Ingredients Needed</div>
+                            <ul class="recipe-ingredients-list" id="res-ingredients">
+                                <li>Paneer - 50g</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <div class="recipe-section-title">Instructions</div>
+                            <ol class="recipe-instructions" id="res-instructions">
+                                <li>Chop paneer.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="recipe-benefit-alert" id="res-benefit">
+                            Beneficial for blood sugar control.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon-circle">🥗</div>
+                <h3>Weight Loss Management</h3>
+                <p>Personalised calorie-controlled diet plans designed to accelerate fat loss while maintaining muscle health and energy levels.</p>
+                <a href="/services" class="service-learn-more">Learn More &rarr;</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon-circle">🏥</div>
+                <h3>Clinical Nutrition</h3>
+                <p>Therapeutic dietary protocols specifically engineered to help manage and reverse PCOS, Diabetes, Thyroid issues, and Heart conditions.</p>
+                <a href="/services" class="service-learn-more">Learn More &rarr;</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon-circle">💻</div>
+                <h3>Online Consultations</h3>
+                <p>Expert dietary coaching and regular follow-ups conducted from the comfort of your home, supporting you anywhere in the world.</p>
+                <a href="/services" class="service-learn-more">Learn More &rarr;</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon-circle">🍳</div>
+                <h3>Meal Planning & Recipes</h3>
+                <p>Custom-crafted weekly Indian menus specifying breakfast, lunch, and dinner, complete with easy cooking steps and macros.</p>
+                <a href="/services" class="service-learn-more">Learn More &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section" style="background-color: var(--primary-light);">
+    <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🧪</div>
+                <h3>Science-Based Approach</h3>
+                <p>Our protocols are backed by solid clinical evidence, not fads. We evaluate blood markers and metabolic trends to guide recommendations.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">📋</div>
+                <h3>100% Personalised Plans</h3>
+                <p>We do not sell cookie-cutter plans. Your diet is customized to fit your home ingredients, budget, daily calendar, and culinary tastes.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤝</div>
+                <h3>Ongoing Support</h3>
+                <p>You receive regular weekly follow-ups, weight logs, recipe modifications, and direct support via WhatsApp to keep you accountable.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS CAROUSEL -->
+<section class="section testimonials-section">
+    <div class="container">
+        <h2 class="section-title">Success Stories</h2>
+        
+        <div class="carousel-container">
+            <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous Testimonial">&larr;</button>
+            <button class="carousel-btn next" id="carousel-next" aria-label="Next Testimonial">&rarr;</button>
+            
+            <div class="carousel-track" id="carousel-track">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" alt="Aditi Sharma" class="client-photo">
+                        <div>
+                            <div class="client-name">Aditi Sharma</div>
+                            <div class="client-city">Delhi</div>
+                        </div>
+                        <div class="star-rating">★★★★★</div>
+                        <p class="quote-text">"Oshin's PCOS diet plan changed my life. I lost 8kg and my cycle is regular for the first time in years! The meals are simple Indian food that I cook every day."</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150" alt="Rajesh Patel" class="client-photo">
+                        <div>
+                            <div class="client-name">Rajesh Patel</div>
+                            <div class="client-city">Mumbai</div>
+                        </div>
+                        <div class="star-rating">★★★★★</div>
+                        <p class="quote-text">"Highly professional approach. The diabetes meal plan was incredibly easy to follow and my HbA1c went down from 8.2 to 6.4 in just 3 months. Highly recommended."</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Sneha Reddy" class="client-photo">
+                        <div>
+                            <div class="client-name">Sneha Reddy</div>
+                            <div class="client-city">Bangalore</div>
+                        </div>
+                        <div class="star-rating">★★★★★</div>
+                        <p class="quote-text">"The online consults are super convenient. The recipes are standard Indian meals but optimized for my thyroid condition. I feel energetic all day now!"</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Amit Verma" class="client-photo">
+                        <div>
+                            <div class="client-name">Amit Verma</div>
+                            <div class="client-city">Indore</div>
+                        </div>
+                        <div class="star-rating">★★★★★</div>
+                        <p class="quote-text">"Sustainable weight loss at its best. No starvation, just healthy eating. I lost 12kg without giving up my rotis and home cooked rice. Oshin is amazing!"</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" alt="Priya Nair" class="client-photo">
+                        <div>
+                            <div class="client-name">Priya Nair</div>
+                            <div class="client-city">Kochi</div>
+                        </div>
+                        <div class="star-rating">★★★★★</div>
+                        <p class="quote-text">"Oshin is incredibly compassionate. She listens to all your concerns, understands your lifestyle, and creates a plan that is highly customized to you."</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 6 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Rohan Das" class="client-photo">
+                        <div>
+                            <div class="client-name">Rohan Das</div>
+                            <div class="client-city">Kolkata</div>
+                        </div>
+                        <div class="star-rating">★★★★★</div>
+                        <p class="quote-text">"The meal plans are so practical. I do not feel like I am on a restrictive diet at all. It has become my default lifestyle now. Oshin guides you like a friend."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-indicators" id="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+                <span class="indicator" data-slide="5"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED BLOG POSTS -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Nutrition Tips & Insights</h2>
+        
+        <div class="blog-grid">
+            {% for blog in blogs %}
+            <article class="blog-card">
+                <div class="blog-thumb">
+                    <img src="{{ blog.image }}" alt="{{ blog.title }}">
+                    <span class="blog-category-badge">{{ blog.category }}</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-date-time">{{ blog.date }} | {{ blog.read_time }}</div>
+                    <h3>{{ blog.title }}</h3>
+                    <p>{{ blog.excerpt }}</p>
+                    <a href="/blog/{{ blog.id }}" class="blog-read-more">Read More &rarr;</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="cta-banner-content">
+        <h2>Start Your Health Journey Today</h2>
+        <p>Book a free 15-minute discovery call with Oshin to understand how we can help you transform your wellness.</p>
+        <a href="/book" class="btn btn-gold btn-pill btn-large">Book Free Call</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Flag to mark home page for transparent navbar scroll behavior
+    document.body.classList.add('home-page-body');
+</script>
+{% endblock %}

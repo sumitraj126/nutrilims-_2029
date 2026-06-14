@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | {{ blog.title }}{% endblock %}
+
+{% block content %}
+<article class="blog-detail-section section">
+    <div class="container">
+        <!-- Title and Meta -->
+        <header class="blog-detail-header">
+            <span class="blog-category-badge" style="position: static; display: inline-block; align-self: center;">{{ blog.category }}</span>
+            <h1>{{ blog.title }}</h1>
+            <div class="blog-detail-meta">
+                <span>📅 Published: {{ blog.date }}</span>
+                <span>⏱️ Read Time: {{ blog.read_time }}</span>
+                <span>✍️ Author: Oshin Ambekar</span>
+            </div>
+        </header>
+        
+        <!-- Large Banner Image -->
+        <div class="blog-detail-banner">
+            <img src="{{ blog.image }}" alt="{{ blog.title }}">
+        </div>
+        
+        <div class="blog-detail-content-layout">
+            <!-- Left: Rich Text -->
+            <div class="blog-rich-content">
+                {{ blog.content | safe }}
+                
+                <div style="margin-top: 40px; border-top: 2px solid var(--primary-light); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                    <h5 style="font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Share this article:</h5>
+                    <div class="footer-socials" style="margin-top: 0;">
+                        <a href="https://twitter.com" target="_blank" rel="noopener">🐦</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener">📘</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener">💼</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right: Sidebar -->
+            <aside class="blog-sidebar">
+                <!-- Recent Articles -->
+                <div class="sidebar-widget">
+                    <h4>Recent Articles</h4>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        {% for post in recent %}
+                        <a href="/blog/{{ post.id }}" style="display: flex; gap: 12px; align-items: flex-start; text-decoration: none; color: inherit;">
+                            <img src="{{ post.image }}" alt="{{ post.title }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-light); flex-shrink: 0;">
+                            <div>
+                                <h5 style="font-size: 14px; line-height: 1.3; font-weight: 600; color: var(--text-dark); margin-bottom: 2px;">{{ post.title }}</h5>
+                                <span style="font-size: 11px; color: var(--text-muted);">{{ post.date }}</span>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <!-- CTA Booking Card -->
+                <div class="sidebar-widget" style="background-color: var(--primary); color: var(--white); border-color: var(--primary);">
+                    <h4 style="color: var(--white); border-bottom-color: rgba(255,255,255,0.15);">Personalised Roadmap</h4>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 16px;">
+                        Every body has unique biochemistry. Get a medical diet plan tailored to your medical history, goals, and food preferences.
+                    </p>
+                    <a href="/book" class="btn btn-gold btn-pill btn-large" style="width: 100%; font-size: 13px; padding: 12px 20px;">Book Free consult</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</article>
+{% endblock %}

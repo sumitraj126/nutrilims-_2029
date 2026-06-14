@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Book Consultation - Appointment Scheduling{% endblock %}
+
+{% block content %}
+<section class="booking-page-section section">
+    <div class="container">
+        <div class="booking-card">
+            <!-- Step Progress Header -->
+            <div class="booking-progress">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="booking-progress-fill"></div>
+                </div>
+                <div class="progress-labels">
+                    <span id="booking-step-title">Step 1: Select Service</span>
+                    <span id="booking-step-num">Step 1 of 5</span>
+                </div>
+            </div>
+            
+            <!-- STEP 1: SELECT SERVICE -->
+            <div class="booking-step" id="step-1">
+                <h3 style="text-align: center; margin-bottom: 20px;">Choose a Nutritional Program</h3>
+                <div class="booking-services-grid">
+                    <div class="service-radio-wrapper">
+                        <input type="radio" name="booking_service" id="srv-weight" value="Weight Loss Management" class="booking-service-radio" data-price="4,999" {% if selected_service == 'Weight Loss Management' or not selected_service %}checked{% endif %}>
+                        <label for="srv-weight" class="booking-service-card-label">
+                            <span style="font-size: 32px;">🥗</span>
+                            <h4 style="font-size: 18px;">Weight Loss Management</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Sustainable fat loss, metabolism restoration, weekly custom menus.</p>
+                            <strong style="color: var(--primary-dark); font-size: 16px; margin-top: auto;">₹4,999 / month</strong>
+                        </label>
+                    </div>
+                    
+                    <div class="service-radio-wrapper">
+                        <input type="radio" name="booking_service" id="srv-clinical" value="Clinical Nutrition" class="booking-service-radio" data-price="5,999" {% if selected_service == 'Clinical Nutrition' %}checked{% endif %}>
+                        <label for="srv-clinical" class="booking-service-card-label">
+                            <span style="font-size: 32px;">🏥</span>
+                            <h4 style="font-size: 18px;">Clinical Nutrition Therapy</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Diets for PCOS, Diabetes, Thyroid, and Heart Health reversal.</p>
+                            <strong style="color: var(--primary-dark); font-size: 16px; margin-top: auto;">₹5,999 / month</strong>
+                        </label>
+                    </div>
+                    
+                    <div class="service-radio-wrapper">
+                        <input type="radio" name="booking_service" id="srv-online" value="Online Consultations" class="booking-service-radio" data-price="2,499" {% if selected_service == 'Online Consultations' %}checked{% endif %}>
+                        <label for="srv-online" class="booking-service-card-label">
+                            <span style="font-size: 32px;">💻</span>
+                            <h4 style="font-size: 18px;">Online Consultations</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">One-on-one virtual diet audit, deficiency review, guidelines PDF.</p>
+                            <strong style="color: var(--primary-dark); font-size: 16px; margin-top: auto;">₹2,499 / session</strong>
+                        </label>
+                    </div>
+                    
+                    <div class="service-radio-wrapper">
+                        <input type="radio" name="booking_service" id="srv-meal" value="Meal Planning & Recipes" class="booking-service-radio" data-price="3,499" {% if selected_service == 'Meal Planning & Recipes' %}checked{% endif %}>
+                        <label for="srv-meal" class="booking-service-card-label">
+                            <span style="font-size: 32px;">🍳</span>
+                            <h4 style="font-size: 18px;">Meal Planning & Recipes</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Weekly recipe cards tailored to kitchen, pre-made grocery logs.</p>
+                            <strong style="color: var(--primary-dark); font-size: 16px; margin-top: auto;">₹3,499 / month</strong>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 2: DATE & TIME -->
+            <div class="booking-step hidden" id="step-2">
+                <h3 style="text-align: center; margin-bottom: 20px;">Pick a Date & Available Slot</h3>
+                <div class="calendar-slots-grid">
+                    <!-- Calendar Panel -->
+                    <div class="calendar-widget">
+                        <div class="calendar-header-row">
+                            <button type="button" class="btn btn-outline-primary" id="cal-prev-month" style="padding: 6px 12px; font-size: 12px;">&larr;</button>
+                            <h4 id="calendar-month-year" style="font-size: 18px;">June 2026</h4>
+                            <button type="button" class="btn btn-outline-primary" id="cal-next-month" style="padding: 6px 12px; font-size: 12px;">&rarr;</button>
+                        </div>
+                        <div class="calendar-days-grid" id="calendar-days-container">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    
+                    <!-- Slots Panel -->
+                    <div class="slots-widget">
+                        <h4 style="font-size: 16px; margin-bottom: 10px;" id="slots-header">Select Time Slot</h4>
+                        <div class="slots-grid" id="slots-container">
+                            <p class="recipe-placeholder" style="grid-column: 1 / -1; padding: 20px 0;">Please select a date on the calendar first.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 3: DETAILS -->
+            <div class="booking-step hidden" id="step-3">
+                <h3 style="text-align: center; margin-bottom: 20px;">Provide Your Information</h3>
+                <div style="display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto; width: 100%;">
+                    <div class="form-group">
+                        <label for="bk-name">Full Name</label>
+                        <input type="text" id="bk-name" class="form-input" placeholder="e.g. Aditi Sharma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-email">Email Address</label>
+                        <input type="email" id="bk-email" class="form-input" placeholder="e.g. aditi@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-phone">Phone Number</label>
+                        <input type="tel" id="bk-phone" class="form-input" placeholder="e.g. +91 98765 43210" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-goal">Primary Health Goal</label>
+                        <input type="text" id="bk-goal" class="form-input" placeholder="e.g. PCOS management and healthy weight loss">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 4: PAYMENT MOCK (Razorpay) -->
+            <div class="booking-step hidden" id="step-4">
+                <h3 style="text-align: center; margin-bottom: 20px;">Complete Secure Payment</h3>
+                <div class="payment-mock-container" style="max-width: 500px; margin: 0 auto; width: 100%;">
+                    <div class="payment-header">
+                        <div class="payment-header-left">
+                            <h5>NUTRISLIMS CLINIC</h5>
+                            <h4 id="pay-total-amount">₹4,999</h4>
+                        </div>
+                        <div class="payment-logo">razorpay</div>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-option-card">
+                            <input type="radio" name="pay_method" id="pm-card" value="card" checked>
+                            <label for="pm-card" style="font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                💳 Credit / Debit Card
+                            </label>
+                        </div>
+                        
+                        <div class="payment-card-fields" id="card-fields-box">
+                            <input type="text" placeholder="Card Number" class="form-input" style="grid-column: 1 / -1; padding: 10px;" id="pm-card-num" value="4321 5678 9012 3456">
+                            <input type="text" placeholder="MM / YY" class="form-input" style="padding: 10px;" id="pm-card-expiry" value="12/28">
+                            <input type="password" placeholder="CVV" class="form-input" style="padding: 10px;" id="pm-card-cvv" value="123">
+                        </div>
+                        
+                        <div class="payment-option-card">
+                            <input type="radio" name="pay_method" id="pm-upi" value="upi">
+                            <label for="pm-upi" style="font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                📱 UPI (GPay / PhonePe / QR Code)
+                            </label>
+                        </div>
+                        
+                        <div class="hidden" id="upi-fields-box" style="text-align: center; padding: 15px; background-color: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-sm);">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text-muted);">Scan this QR Code using any UPI App</div>
+                            <div style="font-size: 80px; line-height: 1;">📱</div>
+                            <div style="font-size: 12px; font-weight: 700; color: var(--primary-dark); margin-top: 10px;">UPI ID: nutrislims@upi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 5: SUCCESS CONFIRMATION -->
+            <div class="booking-step hidden" id="step-5">
+                <div class="booking-success-box">
+                    <div class="success-icon-badge">✓</div>
+                    <h2>Appointment Confirmed!</h2>
+                    <p style="max-width: 500px; color: var(--text-muted);">
+                        Thank you for booking! Your payment was successful and your slot has been reserved. A confirmation email with video link details has been sent to your address.
+                    </p>
+                    
+                    <table class="booking-summary-table">
+                        <tr>
+                            <td>Program</td>
+                            <td id="conf-service">Weight Loss</td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            <td id="conf-date">June 18, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Time Slot</td>
+                            <td id="conf-time">10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Reference ID</td>
+                            <td id="conf-ref">BK-984210</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="display: flex; gap: 16px; margin-top: 10px;">
+                        <button class="btn btn-primary btn-pill" onclick="alert('Event added to Google Calendar!')">Add to Calendar 📅</button>
+                        <a href="/" class="btn btn-outline-primary btn-pill">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step Buttons -->
+            <div class="booking-nav-buttons" id="booking-nav-buttons">
+                <button type="button" class="btn btn-outline-primary btn-pill hidden" id="btn-booking-back">Back</button>
+                <button type="button" class="btn btn-gold btn-pill" id="btn-booking-next" style="margin-left: auto;">Next Step</button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,6 @@
+flask
+google-generativeai
+python-docx
+python-dotenv
+pillow
+werkzeug

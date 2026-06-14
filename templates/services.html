@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Our Services - Clinical & Wellness Programs{% endblock %}
+
+{% block content %}
+<!-- SERVICES INTRO -->
+<section class="services-intro-section section">
+    <div class="container" style="text-align: center;">
+        <h1 style="margin-bottom: 20px;">Our Services & Programs</h1>
+        <p style="max-width: 700px; margin: 0 auto 40px auto; font-size: 18px;">
+            We offer science-backed, highly personalized nutritional programs tailored for sustainable weight loss, therapeutic clinical support, and online coaching.
+        </p>
+        
+        <div class="services-grid" style="text-align: left; margin-top: 50px;">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <div class="service-icon-circle">🥗</div>
+                <h3>Weight Loss Management</h3>
+                <p>Sustainable, calorie-controlled diet plans designed to accelerate fat loss while preserving muscle and energy levels. Perfect for long-term health transformation.</p>
+                <div style="font-weight: 700; color: var(--primary-dark); font-size: 18px; margin-top: 10px;">Starting at ₹4,999 / $75</div>
+                <button class="btn btn-outline-primary btn-pill btn-open-modal" data-service="weight-loss" style="margin-top: 15px; align-self: flex-start;">View Program Details</button>
+            </div>
+            
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <div class="service-icon-circle">🏥</div>
+                <h3>Clinical Nutrition</h3>
+                <p>Therapeutic dietary protocols specifically engineered to help manage and reverse PCOS, Diabetes, Thyroid disorders, and Cardiovascular conditions.</p>
+                <div style="font-weight: 700; color: var(--primary-dark); font-size: 18px; margin-top: 10px;">Starting at ₹5,999 / $90</div>
+                <button class="btn btn-outline-primary btn-pill btn-open-modal" data-service="clinical" style="margin-top: 15px; align-self: flex-start;">View Program Details</button>
+            </div>
+            
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <div class="service-icon-circle">💻</div>
+                <h3>Online Consultations</h3>
+                <p>One-on-one virtual coaching sessions, food diary evaluations, and lifestyle audits. Ideal for busy schedules or international clients.</p>
+                <div style="font-weight: 700; color: var(--primary-dark); font-size: 18px; margin-top: 10px;">Starting at ₹2,499 / $40</div>
+                <button class="btn btn-outline-primary btn-pill btn-open-modal" data-service="online-consult" style="margin-top: 15px; align-self: flex-start;">View Program Details</button>
+            </div>
+            
+            <!-- Service Card 4 -->
+            <div class="service-card">
+                <div class="service-icon-circle">🍳</div>
+                <h3>Meal Planning & Recipes</h3>
+                <p>Diverse, calorie-counted weekly Indian recipe sheets that fit your home ingredients. Eliminates meal prep stress while keeping nutrition optimal.</p>
+                <div style="font-weight: 700; color: var(--primary-dark); font-size: 18px; margin-top: 10px;">Starting at ₹3,499 / $55</div>
+                <button class="btn btn-outline-primary btn-pill btn-open-modal" data-service="meal-plans" style="margin-top: 15px; align-self: flex-start;">View Program Details</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE DETAIL MODALS -->
+
+<!-- Modal 1: Weight Loss -->
+<div class="modal" id="modal-weight-loss">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <span style="font-size: 40px;">🥗</span>
+            <div class="modal-title-desc">
+                <h3>Weight Loss Management</h3>
+                <span>1 Month / 3 Months Program</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>
+                Sustainable fat loss is about balancing calorie deficits with high nutrient density, satiety, and hormonal balance. Our weight management program focuses on healing your metabolism. We construct calorie-controlled, high-protein, and high-fiber plans that prevent the standard weight-rebound cycles typical of crash diets.
+            </p>
+            <div class="recipe-section-title">What is Included</div>
+            <ul class="modal-inclusions">
+                <li>4 custom-crafted weekly diet sheets tailored to your kitchen</li>
+                <li>Weekly progress check-ins and body weight evaluations</li>
+                <li>Instant WhatsApp support for food swaps and eating out advice</li>
+                <li>Nutrislims healthy Indian recipe guidebook (low calorie)</li>
+                <li>Basal Metabolic Rate (BMR) tracking & optimization checklist</li>
+            </ul>
+            <div class="modal-meta-row">
+                <div>
+                    <span style="display: block; font-size: 12px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Investment</span>
+                    <div class="modal-price">₹4,999 <span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/ month ($75 USD)</span></div>
+                </div>
+                <a href="/book?service=Weight Loss Management" class="btn btn-gold btn-pill">Book This Program</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: Clinical Nutrition -->
+<div class="modal" id="modal-clinical">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <span style="font-size: 40px;">🏥</span>
+            <div class="modal-title-desc">
+                <h3>Clinical Nutrition Therapy</h3>
+                <span>Hormonal & Metabolic Reversal Program</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>
+                Medical Nutrition Therapy (MNT) is designed for individuals dealing with clinical diagnoses such as PCOS/PCOD, Type-2 Diabetes, Hyper/Hypothyroidism, Hypertension, or High Cholesterol. We assess your latest blood panels and design anti-inflammatory meal protocols that optimize cellular response, reduce insulin resistance, and support glandular function naturally.
+            </p>
+            <div class="recipe-section-title">What is Included</div>
+            <ul class="modal-inclusions">
+                <li>Detailed evaluation of blood chemistry reports and medical history</li>
+                <li>4 therapeutic weekly diet sheets (low GI, anti-inflammatory)</li>
+                <li>Custom list of botanical boosters and allowed therapeutic ingredients</li>
+                <li>Weekly support calls & lifestyle stress audits</li>
+                <li>Coordinated recommendations with your prescribing physician</li>
+            </ul>
+            <div class="modal-meta-row">
+                <div>
+                    <span style="display: block; font-size: 12px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Investment</span>
+                    <div class="modal-price">₹5,999 <span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/ month ($90 USD)</span></div>
+                </div>
+                <a href="/book?service=Clinical Nutrition" class="btn btn-gold btn-pill">Book This Program</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: Online Consultations -->
+<div class="modal" id="modal-online-consult">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <span style="font-size: 40px;">💻</span>
+            <div class="modal-title-desc">
+                <h3>Online Consultations</h3>
+                <span>1-on-1 Virtual Diet Audit</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>
+                A high-impact virtual session ideal for busy professionals, travelers, or out-of-town clients needing direct expert auditing. We review your current food log, analyze nutritional deficiencies, point out hidden lifestyle triggers, and build a customized action plan that you can immediately implement.
+            </p>
+            <div class="recipe-section-title">What is Included</div>
+            <ul class="modal-inclusions">
+                <li>1-on-1, 30-minute private video consult with Oshin Ambekar</li>
+                <li>Full lifestyle audit (sleep, water, daily activity markers)</li>
+                <li>Nutritional gap review & customized supplement list</li>
+                <li>Post-session personalized Lifestyle Guidelines PDF sheet</li>
+            </ul>
+            <div class="modal-meta-row">
+                <div>
+                    <span style="display: block; font-size: 12px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Investment</span>
+                    <div class="modal-price">₹2,499 <span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/ session ($40 USD)</span></div>
+                </div>
+                <a href="/book?service=Online Consultations" class="btn btn-gold btn-pill">Book This Service</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4: Meal Planning & Recipes -->
+<div class="modal" id="modal-meal-plans">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <span style="font-size: 40px;">🍳</span>
+            <div class="modal-title-desc">
+                <h3>Meal Planning & Recipes</h3>
+                <span>Calorie-Counted Recipe Support</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>
+                Created for people who know how to eat clean but get fatigued by grocery planning and recipe repeating. We design a 4-week structured rotation of Indian breakfasts, lunches, teas, and dinners customized to your local ingredients. Every recipe is accompanied by exact macros, weights, and cooking tips.
+            </p>
+            <div class="recipe-section-title">What is Included</div>
+            <ul class="modal-inclusions">
+                <li>4 weekly custom meal sheets (28 unique recipe cards)</li>
+                <li>Pre-made weekly grocery checklists</li>
+                <li>Calorie & macro counting guidebook</li>
+                <li>Substitution index for easy kitchen swaps</li>
+            </ul>
+            <div class="modal-meta-row">
+                <div>
+                    <span style="display: block; font-size: 12px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Investment</span>
+                    <div class="modal-price">₹3,499 <span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/ month ($55 USD)</span></div>
+                </div>
+                <a href="/book?service=Meal Planning & Recipes" class="btn btn-gold btn-pill">Book This Service</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Blog - Health Tips & Insights{% endblock %}
+
+{% block content %}
+<section class="blog-page-intro section">
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 15px;">Nutrition Tips & Insights</h1>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto; color: var(--text-muted);">
+            Explore science-backed advice, clinical case reviews, and simple healthy Indian recipes curated by Nutritionist Oshin Ambekar.
+        </p>
+        
+        <div class="blog-layout-container">
+            <!-- Left: Sidebar Filters -->
+            <aside class="blog-sidebar">
+                <!-- Search Widget -->
+                <div class="sidebar-widget">
+                    <h4>Search Articles</h4>
+                    <form action="/blog" method="GET" class="search-form">
+                        <input type="text" name="search" placeholder="Type keyword..." value="{{ search_query }}" autocomplete="off">
+                        {% if selected_category != 'All' %}
+                        <input type="hidden" name="category" value="{{ selected_category }}">
+                        {% endif %}
+                        <button type="submit" aria-label="Search">🔍</button>
+                    </form>
+                </div>
+                
+                <!-- Categories Widget -->
+                <div class="sidebar-widget">
+                    <h4>Categories</h4>
+                    <nav class="category-filter-list">
+                        {% for cat in categories %}
+                        <a href="/blog?category={{ cat }}{% if search_query %}&search={{ search_query }}{% endif %}" class="category-filter-btn {% if selected_category == cat %}active{% endif %}">
+                            {{ cat }}
+                        </a>
+                        {% endfor %}
+                    </nav>
+                </div>
+            </aside>
+            
+            <!-- Right: Articles Grid -->
+            <div>
+                {% if blogs %}
+                <div class="blog-grid" style="margin-top: 0; grid-template-columns: repeat(2, 1fr);">
+                    {% for blog in blogs %}
+                    <article class="blog-card">
+                        <div class="blog-thumb">
+                            <img src="{{ blog.image }}" alt="{{ blog.title }}">
+                            <span class="blog-category-badge">{{ blog.category }}</span>
+                        </div>
+                        <div class="blog-card-body">
+                            <div class="blog-date-time">{{ blog.date }} | {{ blog.read_time }}</div>
+                            <h3 style="font-size: 18px;">{{ blog.title }}</h3>
+                            <p style="font-size: 13px;">{{ blog.excerpt }}</p>
+                            <a href="/blog/{{ blog.id }}" class="blog-read-more" style="font-size: 12px;">Read More &rarr;</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+                
+                <!-- Pagination -->
+                {% if total_pages > 1 %}
+                <div class="pagination">
+                    {% for p in range(1, total_pages + 1) %}
+                    <a href="/blog?page={{ p }}{% if selected_category != 'All' %}&category={{ selected_category }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}" class="page-num-link {% if current_page == p %}active{% endif %}">
+                        {{ p }}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% else %}
+                <div style="text-align: center; padding: 60px 0; background-color: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+                    <span style="font-size: 48px;">🔍</span>
+                    <h3 style="margin-top: 15px;">No Articles Found</h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">Try searching for a different keyword or resetting filters.</p>
+                    <a href="/blog" class="btn btn-outline-primary btn-pill" style="margin-top: 20px;">View All Articles</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

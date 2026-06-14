@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrislims | Diet Quiz - Find Your Diet Personality{% endblock %}
+
+{% block content %}
+<section class="quiz-page-section section">
+    <div class="container">
+        <!-- Quiz Panel -->
+        <div class="quiz-card" id="quiz-wizard-card">
+            <!-- Progress Bar -->
+            <div class="quiz-progress" id="quiz-progress-header">
+                <div class="quiz-progress-text" id="quiz-progress-text">Question 1 of 8</div>
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                </div>
+            </div>
+            
+            <!-- Question Slider Container -->
+            <div class="quiz-questions-slider" id="quiz-slider">
+                <!-- Q1: Health Goal -->
+                <div class="quiz-question-screen active" data-step="1">
+                    <h3>What is your primary health goal?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_goal" id="opt-g1" value="Weight Loss" class="quiz-option-radio">
+                        <label for="opt-g1" class="quiz-option-label">
+                            <span class="quiz-option-icon">⚡</span>
+                            <span>Sustainable Weight Loss</span>
+                        </label>
+                        
+                        <input type="radio" name="q_goal" id="opt-g2" value="Muscle Gain" class="quiz-option-radio">
+                        <label for="opt-g2" class="quiz-option-label">
+                            <span class="quiz-option-icon">☀️</span>
+                            <span>Muscle Gain & Energy</span>
+                        </label>
+                        
+                        <input type="radio" name="q_goal" id="opt-g3" value="Clinical Management" class="quiz-option-radio">
+                        <label for="opt-g3" class="quiz-option-label">
+                            <span class="quiz-option-icon">🛡️</span>
+                            <span>Manage PCOS / Diabetes / Thyroid</span>
+                        </label>
+                        
+                        <input type="radio" name="q_goal" id="opt-g4" value="Eat Healthier" class="quiz-option-radio" checked>
+                        <label for="opt-g4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🌿</span>
+                            <span>Build Healthy Habits</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q2: Diet Style -->
+                <div class="quiz-question-screen next" data-step="2">
+                    <h3>What is your current diet style?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_diet" id="opt-d1" value="Vegetarian" class="quiz-option-radio" checked>
+                        <label for="opt-d1" class="quiz-option-label">
+                            <span class="quiz-option-icon">🥦</span>
+                            <span>Vegetarian (Pure Veg)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_diet" id="opt-d2" value="Non-Vegetarian" class="quiz-option-radio">
+                        <label for="opt-d2" class="quiz-option-label">
+                            <span class="quiz-option-icon">🍗</span>
+                            <span>Non-Vegetarian</span>
+                        </label>
+                        
+                        <input type="radio" name="q_diet" id="opt-d3" value="Vegan" class="quiz-option-radio">
+                        <label for="opt-d3" class="quiz-option-label">
+                            <span class="quiz-option-icon">🌱</span>
+                            <span>Vegan (Plant-Based)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_diet" id="opt-d4" value="Eggetarian" class="quiz-option-radio">
+                        <label for="opt-d4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🍳</span>
+                            <span>Eggetarian</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q3: Activity Level -->
+                <div class="quiz-question-screen next" data-step="3">
+                    <h3>What is your typical activity level?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_activity" id="opt-a1" value="Sedentary" class="quiz-option-radio" checked>
+                        <label for="opt-a1" class="quiz-option-label">
+                            <span class="quiz-option-icon">🛋️</span>
+                            <span>Sedentary (Desk Job)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_activity" id="opt-a2" value="Lightly Active" class="quiz-option-radio">
+                        <label for="opt-a2" class="quiz-option-label">
+                            <span class="quiz-option-icon">🚶</span>
+                            <span>Lightly Active (1-2 walks/week)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_activity" id="opt-a3" value="Moderately Active" class="quiz-option-radio">
+                        <label for="opt-a3" class="quiz-option-label">
+                            <span class="quiz-option-icon">🏃</span>
+                            <span>Moderately Active (3-4 workouts/week)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_activity" id="opt-a4" value="Highly Active" class="quiz-option-radio">
+                        <label for="opt-a4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🚴</span>
+                            <span>Highly Active (Daily workout/Sports)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q4: Food Prep -->
+                <div class="quiz-question-screen next" data-step="4">
+                    <h3>How do you prefer your meals?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_prep" id="opt-p1" value="Traditional" class="quiz-option-radio" checked>
+                        <label for="opt-p1" class="quiz-option-label">
+                            <span class="quiz-option-icon">🍛</span>
+                            <span>Traditional Indian Meals</span>
+                        </label>
+                        
+                        <input type="radio" name="q_prep" id="opt-p2" value="Western" class="quiz-option-radio">
+                        <label for="opt-p2" class="quiz-option-label">
+                            <span class="quiz-option-icon">🥗</span>
+                            <span>Continental & Simple Salads</span>
+                        </label>
+                        
+                        <input type="radio" name="q_prep" id="opt-p3" value="Prep" class="quiz-option-radio">
+                        <label for="opt-p3" class="quiz-option-label">
+                            <span class="quiz-option-icon">🍱</span>
+                            <span>Batch Cooking / Meal Preps</span>
+                        </label>
+                        
+                        <input type="radio" name="q_prep" id="opt-p4" value="Quick" class="quiz-option-radio">
+                        <label for="opt-p4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🍳</span>
+                            <span>Quick Meals (< 15 mins)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q5: Conditions -->
+                <div class="quiz-question-screen next" data-step="5">
+                    <h3>Do you have any diagnosed health conditions?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_cond" id="opt-c1" value="None" class="quiz-option-radio" checked>
+                        <label for="opt-c1" class="quiz-option-label">
+                            <span class="quiz-option-icon">✅</span>
+                            <span>None / General Health</span>
+                        </label>
+                        
+                        <input type="radio" name="q_cond" id="opt-c2" value="Diabetes" class="quiz-option-radio">
+                        <label for="opt-c2" class="quiz-option-label">
+                            <span class="quiz-option-icon">🩸</span>
+                            <span>Type-2 Diabetes / Pre-diabetes</span>
+                        </label>
+                        
+                        <input type="radio" name="q_cond" id="opt-c3" value="PCOS" class="quiz-option-radio">
+                        <label for="opt-c3" class="quiz-option-label">
+                            <span class="quiz-option-icon">🌸</span>
+                            <span>PCOS / PCOD</span>
+                        </label>
+                        
+                        <input type="radio" name="q_cond" id="opt-c4" value="Thyroid" class="quiz-option-radio">
+                        <label for="opt-c4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🦋</span>
+                            <span>Thyroid / Hypertension</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q6: Sleep -->
+                <div class="quiz-question-screen next" data-step="6">
+                    <h3>How would you rate your sleep quality?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_sleep" id="opt-s1" value="Poor" class="quiz-option-radio">
+                        <label for="opt-s1" class="quiz-option-label">
+                            <span class="quiz-option-icon">😫</span>
+                            <span>Poor (< 6 hrs / Interrupted)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_sleep" id="opt-s2" value="Average" class="quiz-option-radio" checked>
+                        <label for="opt-s2" class="quiz-option-label">
+                            <span class="quiz-option-icon">🥱</span>
+                            <span>Average (6-7 hrs / Wake up tired)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_sleep" id="opt-s3" value="Good" class="quiz-option-radio">
+                        <label for="opt-s3" class="quiz-option-label">
+                            <span class="quiz-option-icon">😴</span>
+                            <span>Good (7-8 hrs / Rested)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_sleep" id="opt-s4" value="Excellent" class="quiz-option-radio">
+                        <label for="opt-s4" class="quiz-option-label">
+                            <span class="quiz-option-icon">✨</span>
+                            <span>Excellent (8+ hrs / Energized)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q7: Water -->
+                <div class="quiz-question-screen next" data-step="7">
+                    <h3>What is your typical daily water intake?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_water" id="opt-w1" value="Low" class="quiz-option-radio">
+                        <label for="opt-w1" class="quiz-option-label">
+                            <span class="quiz-option-icon">💧</span>
+                            <span>Less than 1 Litre</span>
+                        </label>
+                        
+                        <input type="radio" name="q_water" id="opt-w2" value="Medium" class="quiz-option-radio" checked>
+                        <label for="opt-w2" class="quiz-option-label">
+                            <span class="quiz-option-icon">🥛</span>
+                            <span>1 to 2 Litres</span>
+                        </label>
+                        
+                        <input type="radio" name="q_water" id="opt-w3" value="High" class="quiz-option-radio">
+                        <label for="opt-w3" class="quiz-option-label">
+                            <span class="quiz-option-icon">🥤</span>
+                            <span>2 to 3 Litres</span>
+                        </label>
+                        
+                        <input type="radio" name="q_water" id="opt-w4" value="Hydrated" class="quiz-option-radio">
+                        <label for="opt-w4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🌊</span>
+                            <span>More than 3 Litres</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Q8: Stress -->
+                <div class="quiz-question-screen next" data-step="8">
+                    <h3>How do you manage daily stress?</h3>
+                    <div class="quiz-options-grid">
+                        <input type="radio" name="q_stress" id="opt-st1" value="High" class="quiz-option-radio">
+                        <label for="opt-st1" class="quiz-option-label">
+                            <span class="quiz-option-icon">🤯</span>
+                            <span>High Stress (Often overwhelmed)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_stress" id="opt-st2" value="Moderate" class="quiz-option-radio" checked>
+                        <label for="opt-st2" class="quiz-option-label">
+                            <span class="quiz-option-icon">😰</span>
+                            <span>Moderate (Manageable but present)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_stress" id="opt-st3" value="Low" class="quiz-option-radio">
+                        <label for="opt-st3" class="quiz-option-label">
+                            <span class="quiz-option-icon">😌</span>
+                            <span>Low (Calm & composed)</span>
+                        </label>
+                        
+                        <input type="radio" name="q_stress" id="opt-st4" value="Very Low" class="quiz-option-radio">
+                        <label for="opt-st4" class="quiz-option-label">
+                            <span class="quiz-option-icon">🧘</span>
+                            <span>Very Low (Relaxed / Meditative)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step Buttons -->
+            <div class="quiz-actions" id="quiz-nav-actions">
+                <button type="button" class="btn btn-outline-primary btn-pill hidden" id="btn-quiz-back">Back</button>
+                <button type="button" class="btn btn-gold btn-pill" id="btn-quiz-next" style="margin-left: auto;">Next Question</button>
+            </div>
+        </div>
+        
+        <!-- Lead Email Capture Screen (Hidden by default) -->
+        <div class="quiz-card hidden" id="quiz-email-card">
+            <div class="quiz-email-screen">
+                <span style="font-size: 50px;">🎁</span>
+                <h3>Your Diet Personality is Ready!</h3>
+                <p>Enter your contact details below to unlock your clinical archetype, custom health tips, and primary diet roadmap.</p>
+                
+                <form class="quiz-email-form" id="quiz-lead-form">
+                    <div class="form-group" style="text-align: left;">
+                        <label for="qz-email">Email Address</label>
+                        <input type="email" id="qz-email" class="form-input" placeholder="e.g. aditi@example.com" required>
+                    </div>
+                    <div class="form-group" style="text-align: left;">
+                        <label for="qz-phone">Phone Number (Optional)</label>
+                        <input type="tel" id="qz-phone" class="form-input" placeholder="e.g. +91 98765 43210">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gold btn-pill" style="margin-top: 10px;">See My Results &rarr;</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Results Page & Downloadable Card (Hidden by default) -->
+        <div class="quiz-card hidden" id="quiz-results-card">
+            <div class="quiz-results-screen">
+                <!-- Diet Portrait Card (for display & export) -->
+                <div class="diet-personality-card-container" id="printable-personality-card">
+                    <div class="personality-card-header">
+                        <span class="personality-card-icon" id="res-icon">🛡️</span>
+                        <div class="personality-card-titles">
+                            <h4>Nutrislims Clinical Archetype</h4>
+                            <h3 id="res-personality-name">Gut Healer</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-card-body">
+                        <p id="res-desc">
+                            Your profile indicates a requirement for hormone stabilization and cellular support. An anti-inflammatory routine works wonders.
+                        </p>
+                        
+                        <div class="personality-card-highlights">
+                            <strong>Daily Focus Tip:</strong> <span id="res-tip">Add 1 tbsp chia seeds in morning water.</span>
+                        </div>
+                        
+                        <div class="personality-food-list">
+                            <h5>Key Functional Foods</h5>
+                            <div class="personality-food-tags" id="res-foods">
+                                <span class="food-tag-badge">Turmeric</span>
+                                <span class="food-tag-badge">Walnuts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+                    <button class="btn btn-primary btn-pill" onclick="window.print()">Export / Print Card 🖨️</button>
+                    <a href="/book" class="btn btn-gold btn-pill" id="btn-quiz-book-redirect">Get Custom Meal Plan &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
