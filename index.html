@@ -57,70 +57,102 @@
         </div>
     </div>
 
+    <!-- FLOATING BACKDROP DECOR ORBS -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
     <!-- MAIN BODY CONTENT -->
     <main class="page-content">
         <!-- HERO BANNER -->
         <section class="hero-banner">
             <div class="hero-overlay"></div>
-            <div class="container">
+            <div class="container hero-grid-container">
                 <div class="hero-content">
-                    <h1>Transform Your Health with Expert Nutrition</h1>
+                    <span class="hero-pre-tag">PREMIUM CLINICAL NUTRITION</span>
+                    <h1>Transform Your Health with <span class="gradient-text-gold">Expert Nutrition</span></h1>
                     <p>Personalised diet plans by certified nutritionist Oshin Ambekar — trusted by 500+ clients across India.</p>
                     <div class="hero-ctas">
                         <a href="book.html" class="btn btn-gold btn-pill btn-large">Book Free Consultation</a>
                         <a href="quiz.html" class="btn btn-outline btn-pill btn-large">Take Our Free Diet Quiz</a>
                     </div>
                 </div>
+                
+                <div class="hero-visual-3d">
+                    <div class="visual-stack-card card-1 premium-3d-card">
+                        <img src="static/images/oshin_ambekar.webp" alt="Oshin Ambekar" class="badge-avatar">
+                        <div class="badge-details">
+                            <h5>Oshin Ambekar</h5>
+                            <p>M.Sc. Clinical Nutrition</p>
+                        </div>
+                    </div>
+                    <div class="visual-stack-card card-2 premium-3d-card">
+                        <span class="badge-icon">⚡</span>
+                        <div class="badge-details">
+                            <h5>95% Success</h5>
+                            <p>Metabolic Reversal</p>
+                        </div>
+                    </div>
+                    <div class="visual-stack-card card-3 premium-3d-card">
+                        <span class="badge-icon">🎓</span>
+                        <div class="badge-details">
+                            <h5>Brunel London</h5>
+                            <p>MPH Public Health</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- TRUST STATS BAR -->
-        <section class="trust-stats">
+        <section class="trust-stats-section">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="500">0</span>
-                        <span class="stat-label">Clients Helped</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="8">0</span>
-                        <span class="stat-label">Years of Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="95">0</span>
-                        <span class="stat-label">Success Rate (%)</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="4.9">0</span>
-                        <span class="stat-label">Average Rating ★</span>
+                <div class="trust-stats-glass reveal">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="500">0</span>
+                            <span class="stat-label">Clients Helped</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="8">0</span>
+                            <span class="stat-label">Years of Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="95">0</span>
+                            <span class="stat-label">Success Rate (%)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="4.9">0</span>
+                            <span class="stat-label">Average Rating ★</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- MEET THE NUTRITIONIST BANNER -->
-        <section class="section nutritionist-banner-section" style="background-color: var(--white);">
+        <section class="section nutritionist-banner-section reveal" style="background-color: var(--white); position: relative; z-index: 1;">
             <div class="container">
                 <div class="about-intro-grid">
-                    <div class="about-photo-wrapper">
-                        <img src="static/images/oshin_ambekar.webp" alt="Oshin Ambekar" class="about-photo">
+                    <div class="about-photo-wrapper premium-3d-card" style="box-shadow: 0 20px 40px rgba(125, 155, 118, 0.12); border-radius: var(--radius-md); overflow: hidden; border: 4px solid var(--white); outline: 1px solid var(--border-light);">
+                        <img src="static/images/oshin_ambekar.webp" alt="Oshin Ambekar" class="about-photo" style="transition: transform 0.5s;">
                     </div>
                     <div class="about-bio">
                         <span class="section-tag" style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; display: block; margin-bottom: 5px;">Meet the Expert</span>
-                        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; margin-top: 5px; margin-bottom: 15px; color: var(--text-dark);">Oshin Ambekar</h2>
-                        <h4 style="color: var(--primary-dark); font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; margin-top: 5px; margin-bottom: 15px; color: var(--text-dark);"><span class="gradient-text-sage">Oshin Ambekar</span></h2>
+                        <h4 style="color: var(--accent); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
                             M.Sc. Clinical Nutrition & MPH (Brunel University, London)
                         </h4>
-                        <p style="margin-bottom: 15px; line-height: 1.6;">
+                        <p style="margin-bottom: 15px; line-height: 1.6; font-size: 16px;">
                             Oshin Ambekar is a widely recognized certified nutritionist and dietician in Indore, bringing a global perspective to local wellness. With a Master’s degree in Public Health from Brunel University, London, and credentials in clinical biochemistry, she specializes in PCOS reversal, Diabetes management, and sustainable weight loss.
                         </p>
-                        <p style="margin-bottom: 25px; line-height: 1.6;">
+                        <p style="margin-bottom: 25px; line-height: 1.6; font-size: 16px;">
                             As an active member of both the <strong>Indian Diabetes Association (IDA)</strong> and the <strong>British Diabetes Association (BDA)</strong>, she emphasizes food as natural therapy using accessible Indian home kitchen ingredients.
                         </p>
                         <div class="badge-grid" style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: 25px;">
-                            <span style="background-color: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600;">🎓 MPH Brunel University, London</span>
-                            <span style="background-color: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600;">📋 Indian & British Diabetes Associations</span>
-                            <span style="background-color: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600;">🔬 8+ Years Clinical Experience</span>
+                            <span style="background-color: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; border: 1px solid var(--border-light);">🎓 MPH Brunel University, London</span>
+                            <span style="background-color: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; border: 1px solid var(--border-light);">📋 Indian & British Diabetes Associations</span>
+                            <span style="background-color: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; border: 1px solid var(--border-light);">🔬 8+ Years Clinical Experience</span>
                         </div>
                         <a href="about.html" class="btn btn-primary btn-pill">Read Full Biography &rarr;</a>
                     </div>
@@ -129,35 +161,35 @@
         </section>
 
         <!-- CLINICAL HABITS MATRIX (Transformation Estimator) -->
-        <section class="section" style="background-color: var(--primary-light);">
+        <section class="section reveal" style="background-color: var(--primary-light); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Clinical Health Matrix</h2>
                 <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">
                     Adjust the sliders below to estimate your health transformation potential based on daily lifestyle indicators. See how key clinical metrics respond dynamically.
                 </p>
                 
-                <div class="matrix-container" style="background-color: var(--white);">
+                <div class="matrix-container premium-glass-card" style="background-color: rgba(255,255,255,0.7); backdrop-filter: blur(20px);">
                     <div class="matrix-inputs">
                         <div class="slider-group">
-                            <div class="slider-label-row">
+                            <div class="slider-label-row" style="font-weight: 600; color: var(--text-dark);">
                                 <span>Daily Water Intake</span>
-                                <span id="water-val">1.5 Liters</span>
+                                <span id="water-val" style="color: var(--primary-dark);">1.5 Liters</span>
                             </div>
                             <input type="range" min="0.5" max="4.5" step="0.5" value="1.5" class="matrix-slider" id="water-slider">
                         </div>
                         
                         <div class="slider-group">
-                            <div class="slider-label-row">
+                            <div class="slider-label-row" style="font-weight: 600; color: var(--text-dark);">
                                 <span>Sleep Duration</span>
-                                <span id="sleep-val">6 Hours</span>
+                                <span id="sleep-val" style="color: var(--primary-dark);">6 Hours</span>
                             </div>
                             <input type="range" min="4" max="10" step="0.5" value="6" class="matrix-slider" id="sleep-slider">
                         </div>
                         
                         <div class="slider-group">
-                            <div class="slider-label-row">
+                            <div class="slider-label-row" style="font-weight: 600; color: var(--text-dark);">
                                 <span>Daily Activity</span>
-                                <span id="activity-val">15 Minutes</span>
+                                <span id="activity-val" style="color: var(--primary-dark);">15 Minutes</span>
                             </div>
                             <input type="range" min="0" max="90" step="5" value="15" class="matrix-slider" id="activity-slider">
                         </div>
@@ -170,9 +202,9 @@
                                     <circle cx="50" cy="50" r="40" class="svg-arc-bg" />
                                     <circle cx="50" cy="50" r="40" class="svg-arc-fill" id="metabolic-fill" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
                                 </svg>
-                                <div class="arc-text" id="metabolic-text">0%</div>
+                                <div class="arc-text" id="metabolic-text" style="font-weight: 800;">0%</div>
                             </div>
-                            <div class="arc-label">Metabolic Activation</div>
+                            <div class="arc-label" style="font-weight: 600;">Metabolic Activation</div>
                         </div>
                         
                         <div class="matrix-arc-item">
@@ -181,9 +213,9 @@
                                     <circle cx="50" cy="50" r="40" class="svg-arc-bg" />
                                     <circle cx="50" cy="50" r="40" class="svg-arc-fill" id="inflammation-fill" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
                                 </svg>
-                                <div class="arc-text" id="inflammation-text">0%</div>
+                                <div class="arc-text" id="inflammation-text" style="font-weight: 800;">0%</div>
                             </div>
-                            <div class="arc-label">Inflammation Control</div>
+                            <div class="arc-label" style="font-weight: 600;">Inflammation Control</div>
                         </div>
                         
                         <div class="matrix-arc-item">
@@ -192,9 +224,9 @@
                                     <circle cx="50" cy="50" r="40" class="svg-arc-bg" />
                                     <circle cx="50" cy="50" r="40" class="svg-arc-fill" id="vitality-fill" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
                                 </svg>
-                                <div class="arc-text" id="vitality-text">0</div>
+                                <div class="arc-text" id="vitality-text" style="font-weight: 800;">0</div>
                             </div>
-                            <div class="arc-label">Vitality & Energy Index</div>
+                            <div class="arc-label" style="font-weight: 600;">Vitality Index</div>
                         </div>
                     </div>
                 </div>
@@ -202,195 +234,204 @@
         </section>
 
         <!-- DAILY WELLNESS SCORE CHECKLIST -->
-        <section class="section wellness-checklist-section" style="background-color: var(--white);">
+        <section class="section wellness-checklist-section reveal" style="background-color: var(--white); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Calculate Your Daily Wellness Score</h2>
                 <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
                     Select the healthy habits you completed today to instantly calculate your metabolic wellness score. Aim for 80+!
                 </p>
-                <div class="checklist-card" style="background-color: var(--primary-light); border-radius: var(--radius-md); border: 1px solid var(--border-light); padding: var(--spacing-lg); max-width: 800px; margin: 0 auto;">
-                    <div class="checklist-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="15" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>Drank 2.5L+ Water 💧</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="15" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>7-8 Hours Sleep 😴</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="15" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>No Refined Sugar ❌</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="15" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>30 Min Walk / Exercise 🏃‍♀️</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="10" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>Green Tea / Spearmint Tea ☕</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="10" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>2 Servings of Veggies/Salad 🥗</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="10" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>1 Portion of Fresh Fruits 🍎</span>
-                        </label>
-                        <label class="checklist-item" style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-weight: 500;">
-                            <input type="checkbox" class="wellness-checkbox" data-points="10" style="width: 20px; height: 20px; accent-color: var(--primary);">
-                            <span>No Snacking Post Dinner 🌙</span>
-                        </label>
+                
+                <div class="wellness-dashboard">
+                    <div class="wellness-checklist-box">
+                        <div class="capsule-grid">
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="15">
+                                <span class="capsule-label"><span class="check-icon"></span> Drank 2.5L+ Water 💧</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="15">
+                                <span class="capsule-label"><span class="check-icon"></span> 7-8 Hours Sleep 😴</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="15">
+                                <span class="capsule-label"><span class="check-icon"></span> No Refined Sugar ❌</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="15">
+                                <span class="capsule-label"><span class="check-icon"></span> 30 Min Exercise 🏃‍♀️</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="10">
+                                <span class="capsule-label"><span class="check-icon"></span> Spearmint/Green Tea ☕</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="10">
+                                <span class="capsule-label"><span class="check-icon"></span> 2 Servings Salad 🥗</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="10">
+                                <span class="capsule-label"><span class="check-icon"></span> 1 Portion Fruits 🍎</span>
+                            </label>
+                            <label class="capsule-checkbox">
+                                <input type="checkbox" class="wellness-checkbox hidden-checkbox" data-points="10">
+                                <span class="capsule-label"><span class="check-icon"></span> No Late Snacking 🌙</span>
+                            </label>
+                        </div>
                     </div>
                     
-                    <div class="checklist-result" style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: var(--spacing-md); flex-wrap: wrap; gap: var(--spacing-sm);">
-                        <div>
-                            <span style="font-weight: 600; color: var(--text-muted); font-size: 14px;">Your Score Today</span>
-                            <div style="font-size: 36px; font-weight: 700; color: var(--primary-dark);" id="wellness-score-value">0 / 100</div>
+                    <div class="wellness-score-dial">
+                        <div class="progress-circle-wrapper">
+                            <svg class="progress-ring" width="180" height="180">
+                                <circle class="progress-ring-bg" cx="90" cy="90" r="75"></circle>
+                                <circle class="progress-ring-fill" id="wellness-progress-fill" cx="90" cy="90" r="75"></circle>
+                            </svg>
+                            <div class="progress-ring-text">
+                                <span id="wellness-score-value">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
                         </div>
-                        <div id="wellness-score-feedback" style="font-weight: 600; font-size: 16px; color: var(--text-dark);">Start checking off items!</div>
+                        <div id="wellness-score-feedback" style="font-weight: 700; font-size: 16px; text-align: center;">Start checking off items!</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CLINICAL PROCESS / HOW IT WORKS -->
-        <section class="section process-section" style="background-color: var(--primary-light);">
+        <section class="section process-section reveal" style="background-color: var(--primary-light); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">The Clinical Nutrition Journey</h2>
                 <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
                     We follow a structured, scientific process to guide you from initial consult to long-term health sustainability.
                 </p>
-                <div class="process-timeline-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); position: relative; margin-top: 20px;">
-                    <div class="process-step" style="text-align: center; background-color: var(--white); padding: var(--spacing-md); border-radius: var(--radius-md); position: relative; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
-                        <div class="process-step-num" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto var(--spacing-sm) auto; font-size: 18px;">1</div>
-                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 18px;">Clinical Audit</h4>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">We analyze your blood markers, medical history, PCOS/Diabetes status, sleep, and eating patterns.</p>
+                <div class="process-timeline-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-md); position: relative; margin-top: 20px;">
+                    <div class="process-step premium-glass-card" style="text-align: center; background-color: rgba(255,255,255,0.7); backdrop-filter: blur(15px);">
+                        <div class="process-step-num" style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--spacing-sm) auto; font-size: 18px; box-shadow: 0 4px 10px rgba(201,168,76,0.25);">1</div>
+                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700;">Clinical Audit</h4>
+                        <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted);">We analyze your blood markers, medical history, PCOS/Diabetes status, sleep, and eating patterns.</p>
                     </div>
-                    <div class="process-step" style="text-align: center; background-color: var(--white); padding: var(--spacing-md); border-radius: var(--radius-md); position: relative; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
-                        <div class="process-step-num" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto var(--spacing-sm) auto; font-size: 18px;">2</div>
-                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 18px;">Custom Diet Planning</h4>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">You receive a highly detailed, 6-meal program map designed with normal, local Indian kitchen foods.</p>
+                    <div class="process-step premium-glass-card" style="text-align: center; background-color: rgba(255,255,255,0.7); backdrop-filter: blur(15px);">
+                        <div class="process-step-num" style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--spacing-sm) auto; font-size: 18px; box-shadow: 0 4px 10px rgba(201,168,76,0.25);">2</div>
+                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700;">Custom Diet Planning</h4>
+                        <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted);">You receive a highly detailed, 6-meal program map designed with normal, local Indian kitchen foods.</p>
                     </div>
-                    <div class="process-step" style="text-align: center; background-color: var(--white); padding: var(--spacing-md); border-radius: var(--radius-md); position: relative; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
-                        <div class="process-step-num" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto var(--spacing-sm) auto; font-size: 18px;">3</div>
-                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 18px;">Bi-Weekly Reviews</h4>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">Every fortnight, we conduct body composition checks (BMI/BMR) and refine your plan based on responses.</p>
+                    <div class="process-step premium-glass-card" style="text-align: center; background-color: rgba(255,255,255,0.7); backdrop-filter: blur(15px);">
+                        <div class="process-step-num" style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--spacing-sm) auto; font-size: 18px; box-shadow: 0 4px 10px rgba(201,168,76,0.25);">3</div>
+                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700;">Bi-Weekly Reviews</h4>
+                        <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted);">Every fortnight, we conduct body composition checks (BMI/BMR) and refine your plan based on responses.</p>
                     </div>
-                    <div class="process-step" style="text-align: center; background-color: var(--white); padding: var(--spacing-md); border-radius: var(--radius-md); position: relative; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
-                        <div class="process-step-num" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto var(--spacing-sm) auto; font-size: 18px;">4</div>
-                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 18px;">Sustained Results</h4>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">We educate you on food combinations so you can maintain your health results and live diet-free.</p>
+                    <div class="process-step premium-glass-card" style="text-align: center; background-color: rgba(255,255,255,0.7); backdrop-filter: blur(15px);">
+                        <div class="process-step-num" style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--spacing-sm) auto; font-size: 18px; box-shadow: 0 4px 10px rgba(201,168,76,0.25);">4</div>
+                        <h4 style="margin-bottom: var(--spacing-xs); color: var(--primary-dark); font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700;">Sustained Results</h4>
+                        <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted);">We educate you on food combinations so you can maintain your health results and live diet-free.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CLINICAL SERVICES GRID -->
-        <section class="section" style="background-color: var(--white);">
+        <section class="section reveal" style="background-color: var(--white); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Our Clinical Programs</h2>
                 <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
                     We offer specialized clinical nutrition therapies targeting long-term health reversal and sustainable weight loss.
                 </p>
                 <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md);">
-                    <div class="service-card" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
-                        <div class="service-icon-circle">🥗</div>
-                        <h3>Weight Loss/Gain Program</h3>
-                        <p>Calorie-optimized and fiber-rich meal sheets focused on reducing body fat and increasing active metabolic rate naturally.</p>
-                        <a href="services.html" class="service-learn-more">Learn More &rarr;</a>
+                    <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-1" style="border: 1px solid var(--border-light);">
+                        <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">🥗</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Weight Loss/Gain Program</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">Calorie-optimized and fiber-rich meal sheets focused on reducing body fat and increasing active metabolic rate naturally.</p>
+                        <a href="services.html" class="service-learn-more" style="font-weight: 700; color: var(--primary-dark); font-size: 14px; display: inline-block; margin-top: 15px;">Learn More &rarr;</a>
                     </div>
                     
-                    <div class="service-card" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
-                        <div class="service-icon-circle">🏥</div>
-                        <h3>Diabetes Management</h3>
-                        <p>Low glycemic food combination grids to balance glucose spikes, manage insulin resistance, and improve HbA1c levels.</p>
-                        <a href="services.html" class="service-learn-more">Learn More &rarr;</a>
+                    <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-2" style="border: 1px solid var(--border-light);">
+                        <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">🏥</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Diabetes Management</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">Low glycemic food combination grids to balance glucose spikes, manage insulin resistance, and improve HbA1c levels.</p>
+                        <a href="services.html" class="service-learn-more" style="font-weight: 700; color: var(--primary-dark); font-size: 14px; display: inline-block; margin-top: 15px;">Learn More &rarr;</a>
                     </div>
                     
-                    <div class="service-card" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
-                        <div class="service-icon-circle">🌸</div>
-                        <h3>PCOS Diet Plan</h3>
-                        <p>Anti-inflammatory seed combinations, specific fibers, and hormonal guidelines to regulate cycles and reverse PCOS weight.</p>
-                        <a href="services.html" class="service-learn-more">Learn More &rarr;</a>
+                    <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-3" style="border: 1px solid var(--border-light);">
+                        <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">🌸</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">PCOS Diet Plan</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">Anti-inflammatory seed combinations, specific fibers, and hormonal guidelines to regulate cycles and reverse PCOS weight.</p>
+                        <a href="services.html" class="service-learn-more" style="font-weight: 700; color: var(--primary-dark); font-size: 14px; display: inline-block; margin-top: 15px;">Learn More &rarr;</a>
                     </div>
                     
-                    <div class="service-card" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
-                        <div class="service-icon-circle">🤰</div>
-                        <h3>Pregnancy Nutrition</h3>
-                        <p>Healthy pre-conception and post-natal macro guidelines containing high folate, iron, and energy ratios for mother & child.</p>
-                        <a href="services.html" class="service-learn-more">Learn More &rarr;</a>
+                    <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-1" style="border: 1px solid var(--border-light);">
+                        <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">🤰</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Pregnancy Nutrition</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">Healthy pre-conception and post-natal macro guidelines containing high folate, iron, and energy ratios for mother & child.</p>
+                        <a href="services.html" class="service-learn-more" style="font-weight: 700; color: var(--primary-dark); font-size: 14px; display: inline-block; margin-top: 15px;">Learn More &rarr;</a>
                     </div>
-
-                    <div class="service-card" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
-                        <div class="service-icon-circle">👶</div>
-                        <h3>Child Nutrition</h3>
-                        <p>Nutrient-dense, kid-friendly diet matrices aimed at supporting height, active concentration, immunity, and healthy habits.</p>
-                        <a href="services.html" class="service-learn-more">Learn More &rarr;</a>
+ 
+                    <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-2" style="border: 1px solid var(--border-light);">
+                        <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">👶</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Child Nutrition</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">Nutrient-dense, kid-friendly diet matrices aimed at supporting height, active concentration, immunity, and healthy habits.</p>
+                        <a href="services.html" class="service-learn-more" style="font-weight: 700; color: var(--primary-dark); font-size: 14px; display: inline-block; margin-top: 15px;">Learn More &rarr;</a>
                     </div>
-
-                    <div class="service-card" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
-                        <div class="service-icon-circle">🏢</div>
-                        <h3>Corporate Wellness</h3>
-                        <p>Workplace seminars, custom menu auditing, and quick stress-reduction nutrition checklists for busy office teams.</p>
-                        <a href="services.html" class="service-learn-more">Learn More &rarr;</a>
+ 
+                    <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-3" style="border: 1px solid var(--border-light);">
+                        <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">🏢</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Corporate Wellness</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">Workplace seminars, custom menu auditing, and quick stress-reduction nutrition checklists for busy office teams.</p>
+                        <a href="services.html" class="service-learn-more" style="font-weight: 700; color: var(--primary-dark); font-size: 14px; display: inline-block; margin-top: 15px;">Learn More &rarr;</a>
                     </div>
                 </div>
             </div>
         </section>
-
+ 
         <!-- BEFORE/AFTER SUCCESS GALLERY -->
-        <section class="section transformation-gallery-section" style="background-color: var(--primary-light);">
+        <section class="section transformation-gallery-section reveal" style="background-color: var(--primary-light); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Success Transformations</h2>
                 <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
                     Real results from our clients. Natural, sustainable, and clinic-supervised transformations.
                 </p>
                 <div class="transformation-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md);">
-                    <div class="transformation-card" style="background-color: var(--white); border-radius: var(--radius-md); padding: var(--spacing-md); border: 1px solid var(--border-light); text-align: center; box-shadow: var(--shadow-sm);">
-                        <div style="font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 5px; text-transform: uppercase;">PCOS Reversal & Weight Loss</div>
-                        <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 20px;">Shreya S. (Indore)</h4>
-                        <div style="font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px;">-12 Kg in 4 Months</div>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">"Managed to regulate cycles and reverse thyroid fatigue without fancy supplements. Completely relied on wheat bran and spearmint."</p>
+                    <div class="transformation-card-glass premium-3d-card reveal reveal-delay-1" style="text-align: center;">
+                        <div style="font-size: 12px; font-weight: 850; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">PCOS Reversal & Weight Loss</div>
+                        <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 12px; font-size: 22px; color: var(--text-dark);">Shreya S. (Indore)</h4>
+                        <div style="font-size: 28px; font-weight: 800; color: var(--primary-dark); margin-bottom: 15px; text-shadow: 0 1px 2px rgba(125,155,118,0.15);">-12 Kg in 4 Months</div>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">"Managed to regulate cycles and reverse thyroid fatigue without fancy supplements. Completely relied on wheat bran and spearmint."</p>
                     </div>
-                    <div class="transformation-card" style="background-color: var(--white); border-radius: var(--radius-md); padding: var(--spacing-md); border: 1px solid var(--border-light); text-align: center; box-shadow: var(--shadow-sm);">
-                        <div style="font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 5px; text-transform: uppercase;">Diabetes HbA1c Management</div>
-                        <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 20px;">Rajesh K. (Mumbai)</h4>
-                        <div style="font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px;">HbA1c: 8.4 &rarr; 6.1</div>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">"Realigned carbs and increased soluble fibers under Oshin's guidance. Feeling energetic, and medications have been cut by half."</p>
+                    <div class="transformation-card-glass premium-3d-card reveal reveal-delay-2" style="text-align: center;">
+                        <div style="font-size: 12px; font-weight: 850; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Diabetes HbA1c Management</div>
+                        <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 12px; font-size: 22px; color: var(--text-dark);">Rajesh K. (Mumbai)</h4>
+                        <div style="font-size: 28px; font-weight: 800; color: var(--primary-dark); margin-bottom: 15px; text-shadow: 0 1px 2px rgba(125,155,118,0.15);">HbA1c: 8.4 &rarr; 6.1</div>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">"Realigned carbs and increased soluble fibers under Oshin's guidance. Feeling energetic, and medications have been cut by half."</p>
                     </div>
-                    <div class="transformation-card" style="background-color: var(--white); border-radius: var(--radius-md); padding: var(--spacing-md); border: 1px solid var(--border-light); text-align: center; box-shadow: var(--shadow-sm);">
-                        <div style="font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 5px; text-transform: uppercase;">Lifestyle & Weight Management</div>
-                        <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 20px;">Priyanka T. (London)</h4>
-                        <div style="font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px;">-8 Kg in 3 Months</div>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-muted);">"Online coaching was incredibly easy. Custom adjustments for my busy corporate routine helped me stay consistent."</p>
+                    <div class="transformation-card-glass premium-3d-card reveal reveal-delay-3" style="text-align: center;">
+                        <div style="font-size: 12px; font-weight: 850; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Lifestyle & Weight Management</div>
+                        <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 12px; font-size: 22px; color: var(--text-dark);">Priyanka T. (London)</h4>
+                        <div style="font-size: 28px; font-weight: 800; color: var(--primary-dark); margin-bottom: 15px; text-shadow: 0 1px 2px rgba(125,155,118,0.15);">-8 Kg in 3 Months</div>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">"Online coaching was incredibly easy. Custom adjustments for my busy corporate routine helped me stay consistent."</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- AI FRIDGE RECIPE BUILDER WIDGET -->
-        <section class="section" style="background-color: var(--white);">
+        <section class="section reveal" style="background-color: var(--white); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">AI Fridge Recipe Builder</h2>
                 <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">
                     Got leftover ingredients? Enter what is in your fridge, select your health target, and let our AI dietitian craft a healthy Indian recipe instantly!
                 </p>
                 
-                <div class="recipe-builder-widget" style="background-color: var(--primary-light);">
+                <div class="recipe-builder-widget-glass" style="background-color: rgba(125, 155, 118, 0.08); border: 1px solid var(--border-light);">
                     <div class="recipe-builder-grid">
                         <div class="recipe-inputs-panel">
                             <div class="input-tags-container">
-                                <label for="ingredient-input">Enter Ingredients</label>
-                                <div class="tags-input-box" id="tags-input-box">
+                                <label for="ingredient-input" style="font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 10px;">Enter Ingredients</label>
+                                <div class="tags-input-box recipe-input-glowing" id="tags-input-box" style="padding: 12px; border-radius: var(--radius-md);">
                                     <input type="text" id="ingredient-input" placeholder="Type ingredient & press Enter (e.g. Paneer, Spinach)">
                                 </div>
                             </div>
                             
-                            <div class="recipe-goal-select">
-                                <label for="recipe-goal">Dietary Target</label>
-                                <select id="recipe-goal">
+                            <div class="recipe-goal-select" style="margin-top: 20px; margin-bottom: 25px;">
+                                <label for="recipe-goal" style="font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 10px;">Dietary Target</label>
+                                <select id="recipe-goal" style="width: 100%; padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-light); font-weight: 550;">
                                     <option value="General Wellness">General Wellness & Clean Eating</option>
                                     <option value="Weight Loss">Low Calorie (Weight Loss)</option>
                                     <option value="PCOS Friendly">Hormone Balance (PCOS Diet)</option>
@@ -399,64 +440,64 @@
                                 </select>
                             </div>
                             
-                            <button class="btn btn-gold" id="btn-build-recipe">Generate Healthy Recipe 🍳</button>
+                            <button class="btn btn-gold btn-large" id="btn-build-recipe" style="width: 100%; border-radius: var(--radius-md);">Generate Healthy Recipe 🍳</button>
                         </div>
                         
-                        <div class="recipe-output-panel" id="recipe-output-panel">
-                            <div class="recipe-placeholder" id="recipe-placeholder">
-                                <div class="recipe-placeholder-icon">🥕</div>
-                                <h3>Your Healthy Recipe Will Appear Here</h3>
-                                <p>Add ingredients on the left (at least one) and hit generate to query Oshin's AI recipe compiler.</p>
+                        <div class="recipe-output-panel" id="recipe-output-panel" style="background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); overflow: hidden;">
+                            <div class="recipe-placeholder" id="recipe-placeholder" style="padding: 40px; text-align: center;">
+                                <div class="recipe-placeholder-icon" style="font-size: 50px; margin-bottom: 15px;">🥕</div>
+                                <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px;">Your Healthy Recipe Will Appear Here</h3>
+                                <p style="font-size: 13.5px; color: var(--text-muted);">Add ingredients on the left (at least one) and hit generate to query Oshin's AI recipe compiler.</p>
                             </div>
                             
-                            <div class="recipe-loader hidden" id="recipe-loader">
-                                <div class="recipe-spinner"></div>
-                                <div class="recipe-loading-text">Crafting customized recipe...</div>
+                            <div class="recipe-loader hidden" id="recipe-loader" style="padding: 60px; text-align: center;">
+                                <div class="recipe-spinner" style="border-top-color: var(--accent);"></div>
+                                <div class="recipe-loading-text" style="font-weight: 600; color: var(--text-dark); margin-top: 15px;">Crafting customized recipe...</div>
                             </div>
                             
-                            <div class="recipe-card-result hidden" id="recipe-card-result">
-                                <div class="recipe-header-row">
+                            <div class="recipe-card-result hidden" id="recipe-card-result" style="padding: 30px;">
+                                <div class="recipe-header-row" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                                     <div>
-                                        <h3 id="res-recipe-name">Paneer Spinach Bowl</h3>
-                                        <span class="recipe-meta-badge" id="res-prep-time">20 mins</span>
+                                        <h3 id="res-recipe-name" style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text-dark);">Paneer Spinach Bowl</h3>
+                                        <span class="recipe-meta-badge" id="res-prep-time" style="background: var(--primary-light); color: var(--primary-dark); font-weight: 700;">20 mins</span>
                                     </div>
-                                    <span class="recipe-meta-badge" id="res-calories" style="background-color: var(--primary-dark);">280 kcal</span>
+                                    <span class="recipe-meta-badge" id="res-calories" style="background-color: var(--accent); color: var(--white); font-weight: 700;">280 kcal</span>
                                 </div>
                                 
-                                <div class="recipe-stats-row">
-                                    <div class="recipe-stat-box">
-                                        <span>Protein</span>
-                                        <span id="res-protein">15g</span>
+                                <div class="recipe-stats-row" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; margin-bottom: 25px;">
+                                    <div class="recipe-stat-box" style="background: var(--primary-light); padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                                        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Protein</span>
+                                        <span id="res-protein" style="font-size: 16px; font-weight: 700; color: var(--primary-dark); display: block; margin-top: 4px;">15g</span>
                                     </div>
-                                    <div class="recipe-stat-box">
-                                        <span>Carbs</span>
-                                        <span id="res-carbs">20g</span>
+                                    <div class="recipe-stat-box" style="background: var(--primary-light); padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                                        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Carbs</span>
+                                        <span id="res-carbs" style="font-size: 16px; font-weight: 700; color: var(--primary-dark); display: block; margin-top: 4px;">20g</span>
                                     </div>
-                                    <div class="recipe-stat-box">
-                                        <span>Fat</span>
-                                        <span id="res-fat">8g</span>
+                                    <div class="recipe-stat-box" style="background: var(--primary-light); padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                                        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Fat</span>
+                                        <span id="res-fat" style="font-size: 16px; font-weight: 700; color: var(--primary-dark); display: block; margin-top: 4px;">8g</span>
                                     </div>
-                                    <div class="recipe-stat-box">
-                                        <span>Fiber</span>
-                                        <span id="res-fiber">6g</span>
+                                    <div class="recipe-stat-box" style="background: var(--primary-light); padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                                        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Fiber</span>
+                                        <span id="res-fiber" style="font-size: 16px; font-weight: 700; color: var(--primary-dark); display: block; margin-top: 4px;">6g</span>
                                     </div>
                                 </div>
                                 
-                                <div>
-                                    <div class="recipe-section-title">Ingredients Needed</div>
-                                    <ul class="recipe-ingredients-list" id="res-ingredients">
+                                <div style="margin-bottom: 20px;">
+                                    <div class="recipe-section-title" style="font-weight: 700; color: var(--text-dark); font-size: 14px; text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px solid var(--border-light); padding-bottom: 5px;">Ingredients Needed</div>
+                                    <ul class="recipe-ingredients-list" id="res-ingredients" style="list-style-type: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 13.5px; font-weight: 550; color: var(--text-dark);">
                                         <li>Paneer - 50g</li>
                                     </ul>
                                 </div>
                                 
-                                <div>
-                                    <div class="recipe-section-title">Instructions</div>
-                                    <ol class="recipe-instructions" id="res-instructions">
+                                <div style="margin-bottom: 25px;">
+                                    <div class="recipe-section-title" style="font-weight: 700; color: var(--text-dark); font-size: 14px; text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px solid var(--border-light); padding-bottom: 5px;">Instructions</div>
+                                    <ol class="recipe-instructions" id="res-instructions" style="padding-left: 20px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted);">
                                         <li>Chop paneer.</li>
                                     </ol>
                                 </div>
                                 
-                                <div class="recipe-benefit-alert" id="res-benefit">
+                                <div class="recipe-benefit-alert" id="res-benefit" style="background-color: var(--primary-light); border-left: 4px solid var(--primary); padding: 15px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 13.5px; font-weight: 600; color: var(--primary-dark);">
                                     Beneficial for blood sugar control.
                                 </div>
                             </div>
@@ -467,41 +508,41 @@
         </section>
 
         <!-- FREE LEAD MAGNET BANNER -->
-        <section class="section lead-magnet-section" style="background-color: var(--white); padding-top: 0;">
+        <section class="section lead-magnet-section reveal" style="background-color: var(--white); padding-top: 0; position: relative; z-index: 1;">
             <div class="container">
-                <div class="lead-magnet-box" style="background-color: var(--primary-dark); color: var(--white); padding: var(--spacing-lg); border-radius: var(--radius-md); display: flex; align-items: center; gap: var(--spacing-lg); box-shadow: var(--shadow-lg); flex-wrap: wrap;">
-                    <div style="font-size: 64px; flex-shrink: 0; margin: 0 auto;">📚</div>
+                <div class="lead-magnet-box premium-glass-card" style="background-color: var(--primary-dark); color: var(--white); padding: 40px; border-radius: var(--radius-lg); display: flex; align-items: center; gap: 40px; box-shadow: var(--shadow-lg); flex-wrap: wrap; border: 1px solid rgba(255,255,255,0.15);">
+                    <div style="font-size: 72px; flex-shrink: 0; margin: 0 auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">📚</div>
                     <div style="flex: 1; min-width: 280px; text-align: left;">
-                        <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 5px;">Free Resource Download</span>
-                        <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin: 0 0 10px 0;">Indian Kitchen Grocery Swap Guide (PDF)</h2>
-                        <p style="color: #E0E0E0; font-size: 14px; margin-bottom: 20px; line-height: 1.5;">
+                        <span style="color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; display: block; margin-bottom: 5px;">Free Resource Download</span>
+                        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin: 0 0 12px 0; font-weight: 700;">Indian Kitchen Grocery Swap Guide (PDF)</h2>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 25px; line-height: 1.6;">
                             Download our free, research-backed checklist containing 25 budget-friendly kitchen pantry swaps you can implement immediately to balance PCOS, regulate insulin, and feel lighter.
                         </p>
-                        <a href="quiz.html" class="btn btn-gold btn-pill" style="display: inline-block;">Get Free Guide Now 📥</a>
+                        <a href="quiz.html" class="btn btn-gold btn-pill btn-large" style="display: inline-block; box-shadow: 0 8px 20px rgba(201,168,76,0.3);">Get Free Guide Now 📥</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- WHY CHOOSE US -->
-        <section class="section" style="background-color: var(--primary-light);">
+        <section class="section reveal" style="background-color: var(--primary-light); position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Why Choose Us</h2>
-                <div class="why-grid">
-                    <div class="why-card">
-                        <div class="why-icon">🧪</div>
-                        <h3>Science-Based Approach</h3>
-                        <p>Our protocols are backed by solid clinical evidence, not fads. We evaluate blood markers and metabolic trends to guide recommendations.</p>
+                <div class="why-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md);">
+                    <div class="why-card premium-glass-card premium-3d-card reveal reveal-delay-1" style="background-color: rgba(255,255,255,0.7);">
+                        <div class="why-icon" style="font-size: 40px; margin-bottom: 15px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">🧪</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Science-Based Approach</h3>
+                        <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted);">Our protocols are backed by solid clinical evidence, not fads. We evaluate blood markers and metabolic trends to guide recommendations.</p>
                     </div>
-                    <div class="why-card">
-                        <div class="why-icon">📋</div>
-                        <h3>100% Personalised Plans</h3>
-                        <p>We do not sell cookie-cutter plans. Your diet is customized to fit your home ingredients, budget, daily calendar, and culinary tastes.</p>
+                    <div class="why-card premium-glass-card premium-3d-card reveal reveal-delay-2" style="background-color: rgba(255,255,255,0.7);">
+                        <div class="why-icon" style="font-size: 40px; margin-bottom: 15px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">📋</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">100% Personalised Plans</h3>
+                        <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted);">We do not sell cookie-cutter plans. Your diet is customized to fit your home ingredients, budget, daily calendar, and culinary tastes.</p>
                     </div>
-                    <div class="why-card">
-                        <div class="why-icon">🤝</div>
-                        <h3>Ongoing Support</h3>
-                        <p>You receive regular weekly follow-ups, weight logs, recipe modifications, and direct support via WhatsApp to keep you accountable.</p>
+                    <div class="why-card premium-glass-card premium-3d-card reveal reveal-delay-3" style="background-color: rgba(255,255,255,0.7);">
+                        <div class="why-icon" style="font-size: 40px; margin-bottom: 15px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">🤝</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Ongoing Support</h3>
+                        <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted);">You receive regular weekly follow-ups, weight logs, recipe modifications, and direct support via WhatsApp to keep you accountable.</p>
                     </div>
                 </div>
             </div>
@@ -603,7 +644,7 @@
         </section>
 
         <!-- FEATURED BLOG POSTS -->
-        <section class="section">
+        <section class="section reveal" style="position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Nutrition Tips & Insights</h2>
                 
@@ -614,56 +655,56 @@
         </section>
 
         <!-- FAQ ACCORDION ACCESSIBLE COMPONENT -->
-        <section class="section faq-section" style="background-color: var(--white); padding-top: 0;">
+        <section class="section faq-section reveal" style="background-color: var(--white); padding-top: 0; position: relative; z-index: 1;">
             <div class="container">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
                     Have questions about our clinical programs or online bookings? Find immediate answers below.
                 </p>
                 <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
-                    <div class="faq-item" style="border-bottom: 1px solid var(--border-light); padding: 15px 0;">
-                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 10px 0;">
+                    <div class="faq-item-glass" style="padding: 10px 20px;">
+                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 15px 0;">
                             <span>How do online consultations work?</span>
-                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s;">+</span>
+                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s; color: var(--primary-dark);">+</span>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-right: 20px;">
-                            <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-top: 10px;">
+                            <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); padding-bottom: 15px;">
                                 All online programs include bi-weekly consultations via video, customized diet sheets sent directly to your WhatsApp, and regular weight monitoring logs. You stay fully connected to Oshin throughout the week.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="faq-item" style="border-bottom: 1px solid var(--border-light); padding: 15px 0;">
-                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 10px 0;">
+                    <div class="faq-item-glass" style="padding: 10px 20px;">
+                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 15px 0;">
                             <span>Do you recommend extreme diets or costly health powders?</span>
-                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s;">+</span>
+                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s; color: var(--primary-dark);">+</span>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-right: 20px;">
-                            <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-top: 10px;">
+                            <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); padding-bottom: 15px;">
                                 Absolutely not. Our core philosophy is using regular, seasonal ingredients readily available in any typical Indian kitchen. We do not promote starvation or recommend expensive exotic supplements.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="faq-item" style="border-bottom: 1px solid var(--border-light); padding: 15px 0;">
-                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 10px 0;">
+                    <div class="faq-item-glass" style="padding: 10px 20px;">
+                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 15px 0;">
                             <span>Can you help reverse PCOS and lower blood sugar?</span>
-                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s;">+</span>
+                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s; color: var(--primary-dark);">+</span>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-right: 20px;">
-                            <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-top: 10px;">
+                            <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); padding-bottom: 15px;">
                                 Yes. Oshin Ambekar specialises in clinical nutrition therapy for hormone reversal and diabetes. We use evidence-based low-glycemic, anti-inflammatory food protocols to target insulin resistance naturally.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="faq-item" style="border-bottom: 1px solid var(--border-light); padding: 15px 0;">
-                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 10px 0;">
+                    <div class="faq-item-glass" style="padding: 10px 20px;">
+                        <button class="faq-toggle" style="width: 100%; border: none; background: none; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-dark); cursor: pointer; text-align: left; padding: 15px 0;">
                             <span>What are your clinical program fees?</span>
-                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s;">+</span>
+                            <span class="faq-icon" style="font-size: 20px; transition: transform 0.3s; color: var(--primary-dark);">+</span>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-right: 20px;">
-                            <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-top: 10px;">
+                            <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); padding-bottom: 15px;">
                                 Custom consultations start at ₹2,499 ($40 USD), and 1-month comprehensive clinical reversal plans range between ₹4,999 and ₹5,999 ($75 - $90 USD). Detailed descriptions can be viewed under our Services page.
                             </p>
                         </div>

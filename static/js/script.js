@@ -1277,7 +1277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       12. INTERSECTION OBSERVER FOR STATS
+       12. INTERSECTION OBSERVER FOR STATS & SCROLL REVEALS
        ========================================================================== */
     const stats = document.querySelectorAll('.stat-number');
     if (stats.length > 0 && 'IntersectionObserver' in window) {
@@ -1290,7 +1290,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selfObserver.unobserve(el);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.15 }); // LOWERED THRESHOLD SO STATS ANIMATE RELIABLY
         
         stats.forEach(s => obs.observe(s));
         
@@ -1326,12 +1326,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Scroll Reveal Intersection Observer
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length > 0 && 'IntersectionObserver' in window) {
+        const revObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active-reveal');
+                }
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(r => revObserver.observe(r));
+    } else {
+        reveals.forEach(r => r.classList.add('active-reveal'));
+    }
+
     /* ==========================================================================
-       13. INTERACTIVE WELLNESS SCORE CHECKLIST
+       13. INTERACTIVE WELLNESS SCORE CHECKLIST & CIRCULAR CHART
        ========================================================================== */
     const checklistItems = document.querySelectorAll('.wellness-checkbox');
     const scoreVal = document.getElementById('wellness-score-value');
     const scoreFeedback = document.getElementById('wellness-score-feedback');
+    const progressFill = document.getElementById('wellness-progress-fill');
     
     if (checklistItems.length > 0 && scoreVal && scoreFeedback) {
         checklistItems.forEach(item => {
@@ -1346,25 +1362,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            scoreVal.textContent = `${total} / 100`;
+            // Animate number
+            scoreVal.textContent = total;
+            
+            // Animate progress circle ring (Radius 75, Circumference = 471.2)
+            if (progressFill) {
+                const circumference = 471.2;
+                const offset = circumference - (total / 100) * circumference;
+                progressFill.style.strokeDashoffset = offset;
+                
+                // Shift colors dynamically
+                if (total < 40) {
+                    progressFill.style.stroke = "var(--error)";
+                } else if (total < 70) {
+                    progressFill.style.stroke = "var(--accent)";
+                } else {
+                    progressFill.style.stroke = "var(--primary)";
+                }
+            }
             
             if (total === 0) {
                 scoreFeedback.textContent = "Start checking off items!";
                 scoreFeedback.style.color = "var(--text-dark)";
             } else if (total < 40) {
                 scoreFeedback.textContent = "Every healthy swap matters. Keep going! 🌱";
-                scoreFeedback.style.color = "var(--accent)";
+                scoreFeedback.style.color = "var(--error)";
             } else if (total < 70) {
                 scoreFeedback.textContent = "Good job! You're building a strong foundation. 👍";
-                scoreFeedback.style.color = "var(--primary-dark)";
+                scoreFeedback.style.color = "var(--accent)";
             } else if (total < 90) {
                 scoreFeedback.textContent = "Excellent wellness score today! You're thriving. ⚡";
                 scoreFeedback.style.color = "var(--primary-dark)";
             } else {
                 scoreFeedback.textContent = "Phenomenal score! Oshin would be proud! 🏆";
-                scoreFeedback.style.color = "#C9A84C";
+                scoreFeedback.style.color = "var(--accent)";
             }
         }
+        calculateScore(); // Run once to initialize
     }
 
     /* ==========================================================================
@@ -1378,7 +1412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const isActive = item.classList.contains('active');
             
-            document.querySelectorAll('.faq-item').forEach(i => {
+            document.querySelectorAll('.faq-item-glass').forEach(i => {
                 i.classList.remove('active');
                 i.querySelector('.faq-content').style.maxHeight = '0px';
             });
@@ -1387,6 +1421,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.add('active');
                 content.style.maxHeight = content.scrollHeight + 'px';
             }
+        });
+    });
+
+    /* ==========================================================================
+       15. REAL-TIME 3D CARD TILT INTERACTION
+       ========================================================================== */
+    const tiltCards = document.querySelectorAll('.premium-3d-card');
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            const angleX = -(y - yc) / (yc / 10); // max 10 degrees tilt
+            const angleY = (x - xc) / (xc / 10);
+            
+            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-8px) scale(1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)`;
         });
     });
 });
