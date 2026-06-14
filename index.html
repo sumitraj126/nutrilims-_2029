@@ -13,6 +13,49 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Nutrislims Clinical Nutrition",
+      "image": "https://nutrislims.netlify.app/static/images/healthy_hero.webp",
+      "@id": "https://nutrislims.netlify.app/",
+      "url": "https://nutrislims.netlify.app/",
+      "telephone": "+919876543210",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vijay Nagar",
+        "addressLocality": "Indore",
+        "addressRegion": "MP",
+        "postalCode": "452010",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.7533,
+        "longitude": 75.8937
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://facebook.com/nutrislims",
+        "https://instagram.com/nutrislims"
+      ]
+    }
+    </script>
 </head>
 <body class="home-page-body">
     <!-- STICKY NAVBAR -->
@@ -335,7 +378,7 @@
                 <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
                     We offer specialized clinical nutrition therapies targeting long-term health reversal and sustainable weight loss.
                 </p>
-                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md);">
+                <div class="services-grid">
                     <div class="service-card premium-glass-card premium-3d-card reveal reveal-delay-1" style="border: 1px solid var(--border-light);">
                         <div class="service-icon-circle" style="box-shadow: 0 4px 10px rgba(125,155,118,0.15);">🥗</div>
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 21px; margin-bottom: 12px; color: var(--text-dark);">Weight Loss/Gain Program</h3>
@@ -705,7 +748,7 @@
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-right: 20px;">
                             <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); padding-bottom: 15px;">
-                                Custom consultations start at ₹2,499 ($40 USD), and 1-month comprehensive clinical reversal plans range between ₹4,999 and ₹5,999 ($75 - $90 USD). Detailed descriptions can be viewed under our Services page.
+                                Detailed descriptions of our highly personalized clinical programs can be viewed under our Services page.
                             </p>
                         </div>
                     </div>
