@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Copy and paste your deployed Google Apps Script web app URL here.
     // E.g. const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycb.../exec";
     // ==========================================================================
-    const GOOGLE_SHEET_WEB_APP_URL = "";
+    const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxWbqfxKAyAJayzpVc4si0ttOkof9ybxQ5Pzkakr49GdZgXFV8CRLOFFHp68vLBlm8/exec";
 
     /* ==========================================================================
        0. STATIC DATASETS (EMBEDDED DATABASE)
